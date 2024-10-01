@@ -53,6 +53,13 @@ export const userModel = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  confirmPassword: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    },
+  },
   role: {
     type: DataTypes.ENUM(["admin", "user", "authority", "visitant"]),
     defaultValue: "visitant",
