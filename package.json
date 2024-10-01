@@ -1,23 +1,27 @@
 {
-  "name": "proyectov2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "node --watch backend/src/main.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+    "name": "scnetworkp",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailDev": "npx tailwindcss -i ./frontend/src/styles/tailwind.css -o ./frontend/src/styles/estilos.css --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "express-validator": "^7.2.0",
     "morgan": "^1.10.0",
-    "mysql2": "^3.11.0",
-    "node": "^22.8.0",
+    "mysql2": "^3.11.3",
+    "node": "^22.9.0",
     "sequelize": "^6.37.3"
-  }
+    },
+    "devDependencies": {
+    "tailwindcss": "^3.4.13"
+    }
 }
