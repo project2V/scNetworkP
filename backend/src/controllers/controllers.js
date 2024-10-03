@@ -4,7 +4,7 @@ export const ctrl = {};
 
 ctrl.regUser = async (req, res) => {
   const { name, surname, dni, phoneNumber, email, password, address } =
-    req.params;
+    req.body;
   try {
     const newUser = new userModel({
       name,
