@@ -16,7 +16,7 @@ export const userModel = sequelize.define("User", {
     },
   },
   phoneNumber: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     validate: {
       isNumeric: true,
     },

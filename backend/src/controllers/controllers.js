@@ -1,4 +1,3 @@
-import { sequelize } from "../db/connection.js";
 import { userModel } from "../models/user.models.js";
 export const ctrl = {};
 
@@ -24,12 +23,17 @@ ctrl.regUser = async (req, res) => {
 };
 
 ctrl.loginUser = async (req, res) => {
-  const { email, password } = req.params;
+  const { name, dni, password } = req.body;
   try {
-    const user = await userModel.findOne({ where: { email } });
-    if (!user) return res.status(404).json({ message: "User not found" });
-    if (!user.validatePassword(password))
-      return res.status(401).json({ message: "Incorrect password" });
+    const user = await userModel.findOne({ where: { dni } });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    if (!(await user.checkPassword(password))) {
+      return res.status(401).json({ message: "Invalid password" });
+    }
+
+    res.json({ message: "User logged in successfully" });
   } catch (error) {
     console.log("Error getting user");
   }
