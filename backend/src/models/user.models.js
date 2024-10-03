@@ -18,28 +18,12 @@ export const userModel = sequelize.define("User", {
       isNumeric: true,
     },
   },
-  birthDate: {
-    type: DataTypes.DATEONLY,
-    allowNull: false,
-    validate: {
-      isDate: true,
-    },
-  },
   phoneNumber: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
       isNumeric: true,
     },
-  },
-  address: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  userName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
   },
   email: {
     type: DataTypes.STRING,
@@ -53,16 +37,8 @@ export const userModel = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  confirmPassword: {
+  address: {
     type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-    },
-  },
-  role: {
-    type: DataTypes.ENUM(["admin", "user", "authority", "visitant"]),
-    defaultValue: "visitant",
     allowNull: false,
   },
 });
