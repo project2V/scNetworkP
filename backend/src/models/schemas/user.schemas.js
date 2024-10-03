@@ -24,32 +24,12 @@ export const registerUserSchema = [
     .isNumeric()
     .isLength({ min: 8, max: 8 })
     .trim(),
-  body("birthDate")
-    .exists()
-    .notEmpty()
-    .withMessage("Birth date is required")
-    .isISO8601()
-    .trim(),
   body("phoneNumber")
     .exists()
     .notEmpty()
     .withMessage("Phone number is required")
     .isNumeric()
-    .isLength({ min: 9, max: 9 })
-    .trim(),
-  body("address")
-    .exists()
-    .notEmpty()
-    .withMessage("Address is required")
-    .isString()
-    .isLength({ min: 5, max: 100 })
-    .trim(),
-  body("userName")
-    .exists()
-    .notEmpty()
-    .withMessage("Username is required")
-    .isLength({ min: 5, max: 20 })
-    .matches(/^[a-zA-Z0-9]+$/, "g")
+    .isLength({ min: 10, max: 10 })
     .trim(),
   body("email")
     .exists()
@@ -63,20 +43,18 @@ export const registerUserSchema = [
     .exists()
     .notEmpty()
     .withMessage("Password is required")
-    .isLength({ min: 8, max: 20 })
+    .isLength({ min: 8, max: 30 })
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
       "g"
     )
     .trim(),
-  body("confirmPassword")
+  body("address")
     .exists()
     .notEmpty()
-    .withMessage("Confirm password is required")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      "g"
-    )
+    .withMessage("Address is required")
+    .isString()
+    .isLength({ min: 4, max: 100 })
     .trim(),
 ];
 
