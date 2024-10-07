@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>anuncios</title>
+    <link rel="stylesheet" href="../styles/anuncios.css">
 </head>
+
+
 <body>
-    
+    <header>
+        <a href="votaciones.html">Votaciones<a>
+        <a href="publicaciones.html">Publicaciones<a>
+        <a href="anuncios.html">Anuncios<a>
+    </header>
+    <section>       
+    <h2> Bienvenido a la seccion de anuncios </h2>
+    <p> Aqui encontraras los anuncios mas recientes acerca de los proyectos para tu localidad </p>
+    </section>
+    <main>
+    <h2>Anuncios</h2>
+        <div class="anuncioform">
+            <form action="/anuncio" method="POST">
+                <div class="anun">  
+                <textarea name="anuncio" id="anuncio" cols="40" rows="6" required> Escriba su anuncio aqui</textarea>
+                </div>
+                
+                <div class="fecha">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" required>
+                </div>
+                
+                <div class="hora">
+                <label for="hora">Hora:</label>
+                <input type="time" name="hora" id="hora" required>
+                </div>
+                
+                <div class="enviar">
+                <button type="submit" value="Enviar"> 
+                Enviar
+                </button>
+                </div>
+
+        </div>
+</main>
 </body>
 </html>

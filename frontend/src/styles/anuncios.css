@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: #cd9c6d
+}
+.anuncioform{
+    background-color: rgb(169, 78, 255);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50%;
+    border-radius: 20px;
+    margin: auto;
+    padding: 100px;
+}
+header {
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    justify-items:auto;
+    background-color: #ad7e51;
+    padding: 20px 10%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .anun{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
+  .desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
+  .hora{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+  .fecha{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+  .anuncioform button{
+    background-color: rgb(73, 73, 248);
+    color: #fff;
+    border: 2px solid black;
+    padding: 10px 50px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .anuncioform button:hover{
+    background-color: #0056b3;
+  } 
+  .enviar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
