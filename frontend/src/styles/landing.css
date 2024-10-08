@@ -30,6 +30,21 @@
     display: flex;
     justify-content: center;
   }
+  .subir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-post button{
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   
   .auth-buttons {
     position: absolute;
@@ -117,6 +132,11 @@
     border-radius: 5px;
     border-left: 4px solid #007BFF;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
   }
   
   .user-content p {
@@ -176,3 +196,21 @@
       width: 95%;
     }
   }
+ /*botones*/
+ .botonav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8d6236;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ }
+
+header button:hover{
+  background-color: #6d3e01;
+}
