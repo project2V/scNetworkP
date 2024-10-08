@@ -1,14 +1,13 @@
-const nom = document.getElementById("nombre").value;
-const ape = document.getElementById("apellido").value;
-const dni1 = document.getElementById("dni").value;
-const tef = document.getElementById("telefono").value;
-const emc = document.getElementById("email").value;
-const pass = document.getElementById("contrasena").value;
-const loc = document.getElementById("localidad").value;
-
 const registerForm = document.querySelector("#reg-form");
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+  const nom = document.getElementById("nombre").value;
+  const ape = document.getElementById("apellido").value;
+  const dni1 = document.getElementById("dni").value;
+  const tef = document.getElementById("telefono").value;
+  const emc = document.getElementById("email").value;
+  const pass = document.getElementById("contrasena").value;
+  const loc = document.getElementById("localidad").value;
   const inpO = {
     name: nom,
     surname: ape,
