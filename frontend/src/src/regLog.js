@@ -17,6 +17,7 @@ registerForm.addEventListener("submit", async (event) => {
     password: pass,
     address: loc,
   };
+
   console.log(inpO);
   const asd = await fetch("http://localhost:4000/register", {
     method: "POST",
