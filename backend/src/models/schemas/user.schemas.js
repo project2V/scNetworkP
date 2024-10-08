@@ -90,13 +90,13 @@ export const loginUserSchema = [
     .withMessage("Password is required")
     .isLength({ min: 8, max: 20 })
     .withMessage("Password must be at least 8 characters")
-    .matches(
+    /*.matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
       "g"
     )
     .withMessage(
       "Password must contain only alphanumeric characters and numbers only"
-    )
+    )*/
     .trim(),
   body("rememberMe").optional().isBoolean().toBoolean(),
 ];
