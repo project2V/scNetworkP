@@ -23,44 +23,72 @@
     font-size: 1.5rem;
     color: #333;
   }
-  
+   
   main {
     padding: 40px 10%;
-    position: relative;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    grid-gap: 250px;
+    justify-items: center;
   }
   .subir{
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .user-post button{
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
+  
+  .user-post {
+    background-color: #ffd1a7;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Se ajustará al ancho del grid */
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .profile-pic {
+    border-radius: 50%;
+    margin-right: 15px;
+    width: 50px;
+  }
+
+  .username {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .user-content textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
   }
   
   .auth-buttons {
     position: absolute;
-    top: 20px;
+    top: 80px;
     right: 0;
+    display: grid;
+    grid-column-start: 2;
   }
   
   .auth-buttons button {
     background-color: #8d6236;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 25px;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 19px;
     cursor: pointer;
     transition: background-color 0.3s;
+
   }
   
   .auth-buttons button:hover {
@@ -73,7 +101,10 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 370px;
+    width: 500px;
+    height: auto;
+    grid-column-start: 3;
+    
   }
   
   .post-container h3 {
@@ -82,67 +113,11 @@
     display: flex;
     justify-content: center;
   }
-  
-  .post {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border-left: 4px solid #007BFF;
+  img{
+    width: 420px;
   }
-  
-  .post p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .user-post {
-    background-color: #ffd1a7;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 340px;
-    margin-top: 100px;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .profile-pic {
-    border-radius: 50%;
-    margin-right: 15px;
-    margin: 20px;
-    width: 50px;
-  }
-  
-  .username {
-    font-size: 1.2rem;
-    font-weight: bold;
-    width: 500px;
-    margin: 20px;
-    
-  }
-  
-  .user-content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    border-left: 4px solid #007BFF;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-  }
-  
-  .user-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
+
+
   @media (max-width: 1024px) {
     header {
       padding: 20px 5%;
