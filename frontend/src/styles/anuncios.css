@@ -20,13 +20,76 @@ body{
     margin: auto;
     padding: 100px;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #ad7e51;
-  padding: 20px 10%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+ header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   }
+
+  .session{
+    display: flex;
+    padding: 2px;
+    gap: 15px;
+  }
+
+  .session a{
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    padding: 10px;
+    border-radius: 15px;
+    
+  }
+
+  .session a:hover{
+    color: rgb(5, 5, 5);
+    background-color: #cd9c6d;
+    transition: 0.5s;
+  }
+
+  .miLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .miLogo img{
+    width: 50px;
+  }
+
+  .navegacion{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding-top: 15px;
+  }
+
+  .navegacion a{
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    border-bottom: solid 1px black;
+  }
+
+  .bienvenida{
+    gap: 10px;
+    padding: 15px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+
   .anun{
     display: flex;
     flex-direction: column;
@@ -77,7 +140,4 @@ header {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
- }
- header button:hover{
-   background-color: #6d3e01;
  }

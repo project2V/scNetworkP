@@ -10,20 +10,31 @@
 
 <body>
     <header>
-        <button class= "botonav" onclick="window.location.href='votaciones.html'">Votaciones</button>
-        <button class="botonav" onclick="window.location.href='publicaciones.html'">Publicaciones</button>
-        <button class = "botonav" onclick="window.location.href='anuncios.html'">Anuncios</button>
-    </header>
-    <section>       
-    <h2> Bienvenido a la seccion de anuncios </h2>
-    <p> Aqui encontraras los anuncios mas recientes acerca de los proyectos para tu localidad </p>
+    <div class="miLogo">
+        <img src="../images/pngtree-colorful-logo-design-png-transparent-png-image_3536702-removebg-preview.png" alt="">
+        <h2>Tu Puebo Ideal</h2>
+    </div>
+    <div class="navegacion">
+        <a href="votaciones.html">Votaciones</a>
+        <a href="publicaciones.html">Publicaciones</a>
+        <a href="anuncios.html">Anuncios</a>
+    </div>     
+    <div class="session">
+        <a href="register.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="bienvenida">       
+        <h2> Bienvenido a la seccion de anuncios </h2>
+        <p> Aqui encontraras los anuncios mas recientes acerca de los proyectos para tu localidad </p>
+        <h2>Escriba su anuncio aquí</h2>
     </section>
-    <main>
-    <h2>Anuncios</h2>
         <div class="anuncioform">
             <form action="/anuncio" method="POST">
                 <div class="anun">  
-                <textarea name="anuncio" id="anuncio" cols="40" rows="6" required> Escriba su anuncio aqui</textarea>
+                <textarea name="anuncio" placeholder="En qué piensas..." id="anuncio" cols="40" rows="6" required></textarea>
                 </div>
                 
                 <div class="fecha">

@@ -103,7 +103,7 @@
     padding: 20px;
     width: 500px;
     height: auto;
-    grid-column-start: 3;
+    grid-column-start: 2;
     
   }
   
@@ -116,6 +116,29 @@
   img{
     width: 420px;
   }
+  textarea{
+    resize: none;
+    width: 120px;
+  }
+
+  .contenedor-publi{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .gatoElfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+
+  .gatoElfo img{
+    width: 50px;
+  }
+
+  
 
 
   @media (max-width: 1024px) {
@@ -126,6 +149,10 @@
     .auth-buttons {
       right: 5%;
     }
+
+    img{
+      width: 300px;
+    }
   
     .post-container, .user-post {
       width: 80%;
@@ -135,6 +162,10 @@
   @media (max-width: 768px) {
     header h2 {
       font-size: 1.2rem;
+    }
+    
+    img{
+      width: 300px;
     }
   
     .auth-buttons {
