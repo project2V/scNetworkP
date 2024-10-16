@@ -35,3 +35,5 @@ loginForm.addEventListener("submit", async (event) => {
     alert("Error de conexión. Por favor, intenta más tarde.");
   }
 });
+
+

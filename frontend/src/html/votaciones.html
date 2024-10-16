@@ -3,13 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>anuncios</title>
-    <link rel="stylesheet" href="../styles/estilos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital@0;1&display=swap" rel="stylesheet">
+    <title>votaciones</title>
+    <link rel="stylesheet" href="../styles/vota.css">
 </head>
-<body class="bg-violet-500">
-    
+<body>
+    <header>
+        <div class="miLogo">
+            <img src="../images/pngtree-colorful-logo-design-png-transparent-png-image_3536702-removebg-preview.png" alt="">
+            <h2>Tu Pueblo Ideal</h2>
+        </div>
+        <div class="navegacion">
+            <a href="votaciones.html">Votaciones</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <a href="anuncios.html">Anuncios</a>
+        </div>     
+        <div class="session">
+            <a href="register.html">Registrarse</a>
+            <a href="login.html">Iniciar Sesión</a>
+        </div>
+    </header>
+    <main>
+    <section>
+        <h2> Bienvenido a la seccion de votaciones</h2>
+        <p> Aqui encontraras las votaciones que contribuyan con la idea de formar tu pueblo ideal </p>
+    </section>
+    <div class="votaform">
+        <form action="/votacion" method="POST">
+            <div class="vota">  
+            <textarea name="votacion" placeholder="En qué piensas..." id="votacion" cols="40" rows="6" required></textarea>
+            </div>
+            
+        
+            <div class="enviar">
+            <button type="submit" value="Enviar"> 
+            Enviar
+            </button>
+            </div>
+        </form>
+    </div>
+    </main>
 </body>
 </html>

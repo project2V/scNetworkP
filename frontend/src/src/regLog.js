@@ -44,3 +44,16 @@ registerForm.addEventListener("submit", async (event) => {
     alert("Error de conexión. Por favor, intenta más tarde.");
   }
 });
+
+function registrarUsuario() {
+  localStorage.setItem('usuarioRegistrado', 'true');
+  ocultarBotonRegistro();
+}
+function ocultarBotonRegistro() {
+  const botonRegistro = document.getElementById('regbtn');
+  if (localStorage.getItem('usuarioRegistrado') === 'true') {
+      botonRegistro.style.display = 'none';
+  }
+}
+
+window.onload = ocultarBotonRegistro;
