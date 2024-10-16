@@ -60,23 +60,12 @@ export const registerUserSchema = [
 ];
 
 export const loginUserSchema = [
-  body("name")
+  body("email")
     .exists()
     .notEmpty()
-    .withMessage("Name is required")
-    .isString()
-    .isLength({ min: 3, max: 20 })
-    .withMessage("Name must be between 3 and 20 characters")
-    .matches(/^[a-zA-Z]+$/, "g")
-    .trim(),
-  body("dni")
-    .exists()
-    .notEmpty()
-    .withMessage("DNI is required")
-    .isNumeric()
-    .isLength({ min: 8, max: 8 })
-    .withMessage("Invalid DNI")
-    .trim(),
+    .withMessage("Email is required")
+    .isEmail()
+    .normalizeEmail(),
   body("password")
     .exists()
     .notEmpty()
@@ -84,5 +73,4 @@ export const loginUserSchema = [
     .isLength({ min: 8, max: 20 })
     .withMessage("Password must be at least 8 characters")
     .trim(),
-  body("rememberMe").optional().isBoolean().toBoolean(),
 ];
