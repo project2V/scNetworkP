@@ -1,10 +1,14 @@
 import { userModel } from "../models/user.models.js";
 import * as jwt from "jsonwebtoken";
 import { environments } from "../config/environments.js";
+import { hashString } from "../helpers/hash.js";
 import { compare } from "bcrypt";
 
 export const createUser = async (user) => {
   try {
+    const hashedPassword = await hashString(user.password);
+    user.password = hashedPassword;
+
     const newUser = await userModel.create(user);
     return newUser;
   } catch (err) {
@@ -35,7 +39,6 @@ export const getUserByEmailAndPassword = async (email, password) => {
 
   return user;
 };
-
 export const findOneByToken = async (token) => {
   const decodedToken = jwt.decode(token, environments.SECRET);
 
