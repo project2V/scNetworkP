@@ -29,16 +29,22 @@
     </section>
     <div class="votaform">
         <form action="/votacion" method="POST">
-            <div class="vota">  
-            <textarea name="votacion" placeholder="En qué piensas..." id="votacion" cols="40" rows="6" required></textarea>
+            <div class="profile">
+                <img src="../images/cuteKitty.png" alt=""> <p>Usuario 1</p>
             </div>
-            
+            <div class="vota">  
+            <textarea name="votacion" placeholder="Aqui se mostrara la descripcion de la publicacion" id="votacion" cols="40" rows="6" required></textarea>
+            </div>
+            <div>
+                <p>Cantidad de votaciones recibidas:</p>
+            </div>
         
-            <div class="enviar">
-            <button type="submit" value="Enviar"> 
-            Enviar
+            <div class="votar">
+            <button type="submit" value="Votar" id="votarbtn"> 
+            Votar
             </button>
             </div>
+            
         </form>
     </div>
     </main>
