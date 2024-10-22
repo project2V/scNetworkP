@@ -26,6 +26,7 @@ loginForm.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       window.location.href = "publicaciones3.html";
+    } else if (response.ok) {
     } else {
       console.log(response);
       alert("Error al intentar iniciar sesión: intente de nuevo");
