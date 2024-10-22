@@ -12,211 +12,167 @@
   
   header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    background-color: #ad7e51;
-    padding: 20px 10%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-   
-  main {
-    padding: 40px 10%;
-    display: grid;
-    grid-template-columns: repeat(6, 2fr);
-    grid-gap: 250px;
-    justify-items: center;
-  }
-  .subir{
-    display: flex;
-    justify-content: center;
+    width: 100vw;
     align-items: center;
-  }
-  
-  .user-post {
-    background-color: #ffd1a7;
-    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%; /* Se ajustará al ancho del grid */
+
   }
 
-  .user-info {
+  .session{
     display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    padding: 2px;
+    gap: 15px;
   }
 
-  .profile-pic {
-    border-radius: 50%;
-    margin-right: 15px;
+  .session a{
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    padding: 10px;
+    border-radius: 15px;
+    
+  }
+
+  .session a:hover{
+    color: rgb(5, 5, 5);
+    background-color: #cd9c6d;
+    transition: 0.5s;
+  }
+
+  .miLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .miLogo img{
     width: 50px;
   }
 
-  .username {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-
-  .user-content textarea {
-    width: 100%;
-    height: 80px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1rem;
-  }
-  
-  .auth-buttons {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    display: grid;
-    grid-column-start: 2;
-  }
-  
-  .auth-buttons button {
-    background-color: #8d6236;
-    color: #fff;
-    border: none;
-    padding: 10px 25px;
-    margin-left: 10px;
-    border-radius: 19px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-  }
-  
-  .auth-buttons button:hover {
-    background-color: #6d3e01;
-  }
-  
-  .post-container {
-    margin-top: 100px;
-    background-color: #ffd1a7;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 500px;
-    height: auto;
-    grid-column-start: 2;
-    
-  }
-  
-  .post-container h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+  .navegacion{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 40%;
+    padding-top: 15px;
   }
-  img{
-    width: 420px;
+
+  .navegacion a{
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    border-bottom: solid 1px black;
   }
-  textarea{
-    resize: none;
-    width: 120px;
+   
+  
+
+  main{
+    display: grid;
+    grid-template-columns:(3, 1fr);
+    grid-template-rows: auto;
+    padding: 40px;
+  }
+
+  .post-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: 2/3;
   }
 
   .contenedor-publi{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: wheat;
+    border-radius: 10px;
+    padding: 40px;
   }
 
   .gatoElfo{
     display: flex;
     flex-direction: row;
+    gap: 12px;
     align-items: center;
-    gap: 20px;
-    font-family: Arial, Helvetica, sans-serif
   }
 
   .gatoElfo img{
     width: 50px;
+    border-radius: 80px;
   }
 
-  
-
-
-  @media (max-width: 1024px) {
-    header {
-      padding: 20px 5%;
-    }
-  
-    .auth-buttons {
-      right: 5%;
-    }
-
-    img{
-      width: 300px;
-    }
-  
-    .post-container, .user-post {
-      width: 80%;
-    }
+  .contenidoPubli{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  @media (max-width: 768px) {
-    header h2 {
-      font-size: 1.2rem;
-    }
-    
-    img{
-      width: 300px;
-    }
-  
-    .auth-buttons {
-      top: 10px;
-    }
-  
-    .post-container, .user-post {
-      width: 90%;
-    }
+  .contenidoPubli p{
+    padding: 10px;
   }
-  
-  @media (max-width: 480px) {
-    header {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    header h2 {
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-  
-    .auth-buttons {
-      flex-direction: column;
-      top: 10px;
-      right: 10px;
-    }
-  
-    .auth-buttons button {
-      width: 100%;
-    }
-  
-    .post-container, .user-post {
-      width: 95%;
-    }
-  }
- /*botones*/
- .botonav{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #8d6236;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin-left: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
- }
 
-header button:hover{
-  background-color: #6d3e01;
+  .contenidoPubli img{
+    max-width: 420px;
+  }
+
+  .tituloPubli{
+    text-align: center;
+  }
+  
+  .auth-buttons{
+    display: flex;
+    flex-direction: column;
+    grid-column: 3/4;
+  }
+  
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
+
+.dropdown-post {
+  background-color: #8d6236;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-post:hover {
+  background-color: #522801;
+}
+
+
+  @media (max-width: 768px) {
+    main{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contenidoPubli img{
+      width: 380px;
+    }
+  }
+
+  @media (max-width: 482px) {
+    main{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contenidoPubli img{
+      width: 320px;
+    }
+  }
+ 
+
+  
+
+
+  
