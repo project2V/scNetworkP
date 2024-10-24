@@ -1,178 +1,245 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  body {
-    background-color: #cd9c6d;
-    color: #333;
-  }
-  
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100vw;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    padding: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
 
-  }
+body {
+  background-color: white;
+  color: rgb(31, 31, 31);
+}
 
-  .session{
-    display: flex;
-    padding: 2px;
-    gap: 15px;
-  }
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .session a{
-    text-decoration: none;
-    color: black;
-    font-size: medium;
-    padding: 10px;
-    border-radius: 15px;
-    
-  }
+body.darkmode {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
 
-  .session a:hover{
-    color: rgb(5, 5, 5);
-    background-color: #cd9c6d;
-    transition: 0.5s;
-  }
+header .darkmode {
+  box-shadow: 0 4px 6px darkgray;
+}
 
-  .miLogo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+.darkmode main {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
 
-  .miLogo img{
-    width: 50px;
-  }
+.darkmode .post-container {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
 
-  .navegacion{
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
-    padding-top: 15px;
-  }
+.darkmode header {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
 
-  .navegacion a{
-    text-decoration: none;
-    color: black;
-    padding: 8px;
-    border-radius: 5px;
-    border-bottom: solid 1px black;
-  }
-   
-  
+.darkmode header a {
+  color: white;
+}
 
-  main{
-    display: grid;
-    grid-template-columns:(3, 1fr);
-    grid-template-rows: auto;
-    padding: 40px;
-  }
+.session {
+  display: flex;
+  padding: 2px;
+  gap: 15px;
+}
 
-  .post-container{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    grid-column: 2/3;
-  }
+.session a {
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+  font-size: medium;
+  padding: 10px;
+  border-radius: 15px;
+}
 
-  .contenedor-publi{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: wheat;
-    border-radius: 10px;
-    padding: 40px;
-  }
+.darkmode .session a {
+  color: white;
+}
 
-  .gatoElfo{
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    align-items: center;
-  }
+.session a:hover {
+  color: white;
+  background-color: rgb(31, 31, 31);
+  transition: 0.5s;
+}
 
-  .gatoElfo img{
-    width: 50px;
-    border-radius: 80px;
-  }
+.darkmode .session a:hover {
+  background-color: white;
+  color: rgb(31, 31, 31);
+}
 
-  .contenidoPubli{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contenidoPubli p{
-    padding: 10px;
-  }
+.miLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-  .contenidoPubli img{
-    max-width: 420px;
-  }
+.miLogo img {
+  width: 50px;
+}
 
-  .tituloPubli{
-    text-align: center;
-  }
-  
-  .auth-buttons{
-    display: flex;
-    flex-direction: column;
-    grid-column: 3/4;
-  }
-  
+.navegacion {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  padding-top: 15px;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  border-bottom: solid 1px rgb(31, 31, 31);
+}
+
+.darkmode .navegacion a {
+  color: white;
+  border-bottom: solid 1px white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: (3, 1fr);
+  grid-template-rows: auto;
+  padding: 40px;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  grid-column: 2/3;
+}
+
+.contenedor-publi {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 2px 4px rgb(31, 31, 31);
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  color: rgb(31, 31, 31);
+}
+
+.darkmode .contenedor-publi {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  box-shadow: 0 2px 4px rgb(82, 82, 82);
+}
+
+.gatoElfo {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.gatoElfo img {
+  width: 50px;
+  border-radius: 80px;
+}
+
+.contenidoPubli {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px 1px darkgray;
+}
+
+.darkmode .contenedor-publi {
+  box-shadow: 0 1px 1px 1px rgb(82, 82, 82);
+}
+
+.contenidoPubli p {
+  padding: 10px;
+}
+
+.contenidoPubli img {
+  max-width: 420px;
+}
+
+.tituloPubli {
+  text-align: center;
+}
+
+.auth-buttons {
+  display: flex;
+  flex-direction: column;
+  grid-column: 3/4;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
 .dropdown-post {
-  background-color: #8d6236;
+  background-color: rgb(31, 31, 31);
   color: white;
   padding: 10px 20px;
   font-size: 16px;
-  border: none;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.darkmode .dropdown-post {
+  background-color: white;
+  color: rgb(31, 31, 31);
 }
 
 .dropdown-post:hover {
-  background-color: #522801;
+  background-color: white;
+  color: rgb(31, 31, 31);
 }
 
+.darkmode .dropdown-post:hover {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
 
-  @media (max-width: 768px) {
-    main{
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contenidoPubli img{
-      width: 380px;
-    }
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
   }
 
-  @media (max-width: 482px) {
-    main{
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contenidoPubli img{
-      width: 320px;
-    }
+  .contenidoPubli img {
+    width: 380px;
   }
- 
+}
 
-  
+@media (max-width: 482px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .contenidoPubli img {
+    width: 320px;
+  }
+}
 
-  
+.bdark {
+  border-radius: 8px;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  font-size: x-small;
+}
+
+.darkmode .bdark {
+  background-color: white;
+  color: rgb(31, 31, 31);
+}

@@ -143,13 +143,13 @@ registerForm.addEventListener("submit", async (event) => {
 });
 
 function registrarUsuario() {
-  localStorage.setItem('usuarioRegistrado', 'true');
+  localStorage.setItem("usuarioRegistrado", "true");
   ocultarBotonRegistro();
 }
 function ocultarBotonRegistro() {
-  const botonRegistro = document.getElementById('regbtn');
-  if (localStorage.getItem('usuarioRegistrado') === 'true') {
-      botonRegistro.style.display = 'none';
+  const botonRegistro = document.getElementById("regbtn");
+  if (localStorage.getItem("usuarioRegistrado") === "true") {
+    botonRegistro.style.display = "none";
   }
 }
 
