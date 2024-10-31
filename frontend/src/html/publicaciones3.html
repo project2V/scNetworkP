@@ -131,7 +131,19 @@
           </div>
         </article>
         <div class="dropdown">
-          <button class="dropdown-post">Crear publicacion</button>
+          
+          <button class="dropdown-post" id="myBtn">Crear publicacion</button>
+          </div>
+        </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" placeholder="Titulo de la publicación">
+            <textarea placeholder="Escribe aquí lo que quieras compartir"></textarea>
+            <button class="btn">Publicar</button>
+            
+            
+            
           </div>
         </div>
         
@@ -140,9 +152,7 @@
     </main>
 
     <script src="../src/darkmode.js">
-      document.getElementById("hamburger").addEventListener("click", function() {
-        document.querySelector(".menu").classList.toggle("active");
-      });
+
     </script>
   </body>
 </html>
