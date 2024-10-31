@@ -211,18 +211,52 @@ main {
   background-color: rgb(31, 31, 31);
   color: white;
 }
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(31, 31, 31);
+}
 
 @media (max-width: 768px) {
-  main {
-    display: flex;
+  .menu {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(41, 40, 40);
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
+
+  /* Mostrar botón de hamburguesa */
+  .hamburger {
+    display: block;
+  }
+
+  /* Mostrar el menú cuando esté activo */
+  .menu.active {
+    display: flex;
+  }
+
+  /* Centrar los elementos en el menú desplegable */
+  .menu .navegacion,
+  .menu .session {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
 
   .contenidoPubli img {
     width: 380px;
   }
-}
+
 
 @media (max-width: 482px) {
   .session {
@@ -245,4 +279,40 @@ main {
 .darkmode .bdark {
   background-color: white;
   color: rgb(31, 31, 31);
+}
+.menu {
+  display: flex;
+  gap: 20px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(92, 88, 88); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

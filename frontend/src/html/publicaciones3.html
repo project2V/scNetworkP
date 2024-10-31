@@ -16,6 +16,10 @@
         />
         <h2>Tu Pueblo Ideal</h2>
       </div>
+      <button class="hamburger" id="hamburger">
+        ☰
+      </button>
+    <nav class="menu">
       <div class="navegacion">
         <a href="votaciones.html">Elige lo mejor en tu pueblo</a>
         <a href="publicaciones3.html">Publicaciones</a>
@@ -25,7 +29,9 @@
         <a href="register.html">Registrarse</a>
         <a href="login.html">Iniciar Sesión</a>
       </div>
+    </nav>
       <button class="bdark" id="bdark">Cambiar Modo</button>
+   
     </header>
 
     <main>
@@ -125,13 +131,28 @@
           </div>
         </article>
         <div class="dropdown">
-          <button class="dropdown-post">Crear publicacion</button>
+          
+          <button class="dropdown-post" id="myBtn">Crear publicacion</button>
+          </div>
+        </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" placeholder="Titulo de la publicación">
+            <textarea placeholder="Escribe aquí lo que quieras compartir"></textarea>
+            <button class="btn">Publicar</button>
+            
+            
+            
           </div>
         </div>
         
       
       </div>
     </main>
-    <script src="../src/darkmode.js"></script>
+
+    <script src="../src/darkmode.js">
+
+    </script>
   </body>
 </html>
