@@ -7,12 +7,24 @@ export const publicationsModel = sequelize.define("publications", {
     allowNull: false,
     unique: true,
   },
-  description: {
-    type: DataTypes.TEXT,
+  content: {
+    type: DataTypes.STRING,
     allowNull: true,
+  },
+  description1: {
+    type: DataTypes.TEXT,
+    allowNull: null,
+  },
+  description2: {
+    type: DataTypes.TEXT,
+    allowNull: null,
+  },
+  amount: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
   },
   publicationDate: {
     type: DataTypes.DATEONLY,
     allowNull: false,
   },
-})
+});

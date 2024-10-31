@@ -5,6 +5,7 @@ import { environments } from "./src/config/environments.js";
 import { db_start } from "./src/db/start_db.js";
 import { authRouter } from "./src/routes/auth.routes.js";
 import userRouter from "./src/routes/user.routes.js";
+import { pubRouter } from "./src/routes/pub.routes.js";
 const app = express();
 
 // Middleware
@@ -14,6 +15,7 @@ app.use(morgan("dev"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/pub", pubRouter);
 
 // Database setup
 const PORT = environments.PORT;
