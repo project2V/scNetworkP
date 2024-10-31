@@ -1,100 +1,134 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #eeca8f;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: whitesmoke;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .darkmode {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(51, 51, 51);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
 
+.darkmode .container {
+  background-color: rgb(31, 31, 31);
+  color: whitesmoke;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(31, 31, 31);
+}
+
+.darkmode h2 {
+  color: whitesmoke;
 }
 
 .form-group {
-    margin-bottom: 0px;
-    text-align: left;
-    height: 70px;
-    
+  margin-bottom: 0px;
+  text-align: left;
+  height: 70px;
 }
-
 
 label {
-    font-size: 14px;
-    color: #333;
-    display: block;
-    margin-bottom: 8px;
+  font-size: 14px;
+  color: rgb(31, 31, 31);
+  display: block;
+  margin-bottom: 8px;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
+.darkmode label {
+  color: whitesmoke;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
 input[type="tel"] {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.darkmode input[type="text"],
+.darkmode input[type="email"],
+.darkmode input[type="password"],
+.darkmode input[type="tel"] {
+  border: 1px solid rgb(31, 31, 31);
 }
 
 input:focus {
-    border-color: #007bff;
-    outline: none;
+  border-color: #007bff;
+  outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-input[type="tel"] {
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #0056b3;
 }
 
-input[type="text"]::placeholder, 
-input[type="email"]::placeholder, 
-input[type="password"]::placeholder, 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  margin-bottom: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
 input[type="tel"]::placeholder {
-    color: #aaa;
+  color: #aaa;
+}
+
+.darkmode input[type="text"]::placeholder,
+.darkmode input[type="email"]::placeholder,
+.darkmode input[type="password"]::placeholder,
+.darkmode input[type="tel"]::placeholder {
+  color: rgb(51, 51, 51);
 }
 
 @media (max-width: 500px) {
-    .container {
-        padding: 20px;
-    }
+  .container {
+    padding: 20px;
+  }
 }
