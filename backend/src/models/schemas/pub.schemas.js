@@ -7,9 +7,9 @@ export const publiSchema = [
     .withMessage("Title is required")
     .isString()
     .isLength({ min: 4, max: 80 })
-    .withMessage("Title must be between 4 and 20 characters long")
+    .withMessage("Title must be between 4 and 80 characters long")
     .trim(),
-  body("content").isString(),
+  //body("content").isString(),
   body("description1")
     .exists()
     .notEmpty()
@@ -34,11 +34,11 @@ export const publiSchema = [
     .isLength({ min: 1, max: 100 })
     .withMessage("Amount must be between 1 and 100 characters long")
     .trim(),
-  body("publicationDate")
+  /*body("publicationDate")
     .exists()
     .notEmpty()
     .withMessage("Publication date is required")
     .isISO8601()
     .withMessage("Publication date must be a valid ISO 8601 date")
-    .trim(),
+    .trim(),*/
 ];

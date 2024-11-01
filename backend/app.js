@@ -8,8 +8,13 @@ import userRouter from "./src/routes/user.routes.js";
 import { pubRouter } from "./src/routes/pub.routes.js";
 const app = express();
 
+const corsOptions = {
+  origin: "http://127.0.0.1:5500",
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
 

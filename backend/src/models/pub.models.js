@@ -12,12 +12,12 @@ export const publicationsModel = sequelize.define("publications", {
     allowNull: true,
   },
   description1: {
-    type: DataTypes.TEXT,
-    allowNull: null,
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   description2: {
-    type: DataTypes.TEXT,
-    allowNull: null,
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   amount: {
     type: DataTypes.INTEGER,
@@ -25,6 +25,6 @@ export const publicationsModel = sequelize.define("publications", {
   },
   publicationDate: {
     type: DataTypes.DATEONLY,
-    allowNull: false,
+    allowNull: true,
   },
 });

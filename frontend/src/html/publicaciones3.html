@@ -35,7 +35,7 @@
     </header>
 
     <main>
-      <div class="post-container" id="publicaciones">
+      <div class="post-container" id="publicaciones">:
         <h3 class="tituloPubli">Publicaciones</h3>
         <article class="contenedor-publi">
           <div class="gatoElfo">
@@ -138,9 +138,11 @@
         <div id="myModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <input type="text" placeholder="Titulo de la publicación">
-            <textarea placeholder="Escribe aquí lo que quieras compartir"></textarea>
-            <button class="btn">Publicar</button>
+            <input type="text" id="title" placeholder="Titulo de la publicación">
+            <input type="text" id="description1" placeholder="Describa su problema">
+            <input type="text" id="description2" placeholder="Describa una posible solución">
+            <input type="number" id="amount" placeholder="Presupuesto estimado">
+            <button class="btn" id="postBtn">Publicar</button>
             
             
             
@@ -151,8 +153,7 @@
       </div>
     </main>
 
-    <script src="../src/darkmode.js">
-
-    </script>
+    <script src="../src/darkmode.js"></script>
+    <script src="../src/publications.js"></script>
   </body>
 </html>
