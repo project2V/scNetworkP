@@ -16,6 +16,7 @@ loginForm.addEventListener("submit", async (event) => {
     const response = await fetch("http://localhost:4000/api/auth/login", {
       method: "POST",
       body: JSON.stringify(inpO),
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -36,5 +37,3 @@ loginForm.addEventListener("submit", async (event) => {
     alert("Error de conexión. Por favor, intenta más tarde.");
   }
 });
-
-

@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       div.classList.add("publicacion");
       div.innerHTML = `
                         <h2>${publicacion.title}</h2>
-                        <img>${publicacion.content}<img>
                         <p>${publicacion.description1}</p>
                         <p>${publicacion.description2}</p>
                         <p>${publicacion.amount}</p>
@@ -39,18 +38,15 @@ postPublication.addEventListener("click", async (event) => {
   event.preventDefault();
 
   const title = document.getElementById("title").value;
-  //const content = document.getElementById("content").value;
   const description1 = document.getElementById("description1").value;
   const description2 = document.getElementById("description2").value;
   const amount = document.getElementById("amount").value;
 
   const inpO = {
     title: title,
-    //content: content,
     description1: description1,
     description2: description2,
     amount: amount,
-    //publicationDate: publicationDate,
   };
   console.log(inpO);
 
