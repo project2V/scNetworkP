@@ -12,7 +12,7 @@ export const createPublication = async (req, res) => {
 export const getPublications = async (req, res) => {
   try {
     const publications = await publicationsModel.findAll();
-    res.json(publications);
+    res.json(publications).status(200);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

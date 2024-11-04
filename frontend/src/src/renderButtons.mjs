@@ -1,7 +1,8 @@
-const renderButtons = async () => {
+export const renderButtons = async () => {
+  const token = localStorage.getItem("token");
   const loginButton = document.getElementById("loginButton");
   const registerButton = document.getElementById("registerButton");
-  if (localStorage.getItem("token")) {
+  if (localStorage.getItem("token") && token !== undefined) {
     loginButton.style.display = "none";
     registerButton.style.display = "none";
   } else {

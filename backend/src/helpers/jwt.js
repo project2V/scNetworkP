@@ -8,6 +8,7 @@ export const createJWT = (payload) => {
         reject("Error al firmar el token");
       }
       resolve(token);
+      console.log(token);
     });
   });
 };

@@ -23,13 +23,10 @@ loginForm.addEventListener("submit", async (event) => {
     });
 
     const data = await response.json();
-
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-      renderButtons();
-    }
+    console.log(data);
 
     if (response.ok) {
+      localStorage.setItem("token", data.token);
       window.location.href = "publicaciones3.html";
     } else {
       console.log(response);

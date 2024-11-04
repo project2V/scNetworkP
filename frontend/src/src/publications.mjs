@@ -1,3 +1,5 @@
+import { renderButtons } from "./renderButtons.mjs";
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await fetch(
@@ -11,13 +13,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     );
 
+    const data = await response.json();
+
+    if (response.ok) {
+      localStorage.getItem("token", data.token);
+      renderButtons();
+    }
+
     if (response.ok) {
       console.log("Publicaciones obtenidas");
     }
-    const publicaciones = await response.json();
 
     const publicacionesContainer = document.getElementById("publicaciones");
-    publicaciones.forEach((publicacion) => {
+    data.forEach((publicacion) => {
       const div = document.createElement("div");
       div.classList.add("publicacion");
       div.innerHTML = `
