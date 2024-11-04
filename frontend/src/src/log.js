@@ -21,13 +21,16 @@ loginForm.addEventListener("submit", async (event) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(response);
+
     const data = await response.json();
-    console.log(data);
+
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+      renderButtons();
+    }
 
     if (response.ok) {
       window.location.href = "publicaciones3.html";
-    } else if (response.ok) {
     } else {
       console.log(response);
       alert("Error al intentar iniciar sesión: intente de nuevo");

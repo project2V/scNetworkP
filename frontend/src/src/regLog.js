@@ -26,7 +26,6 @@ registerForm.addEventListener("submit", async (event) => {
     const response = await fetch("http://localhost:4000/api/auth/register", {
       method: "POST",
       body: JSON.stringify(inpO),
-      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -34,21 +33,13 @@ registerForm.addEventListener("submit", async (event) => {
 
     const data = await response.json();
     console.log(data);
+    if (response.ok) {
+      window.location.href = "publicaciones3.html";
+    } else {
+      alert("Error al registrar");
+    }
   } catch (error) {
     console.log(error, "Cannot create connection");
     alert("Error de conexión. Por favor, intenta más tarde.");
   }
 });
-
-function registrarUsuario() {
-  localStorage.setItem("usuarioRegistrado", "true");
-  ocultarBotonRegistro();
-}
-function ocultarBotonRegistro() {
-  const botonRegistro = document.getElementById("regbtn");
-  if (localStorage.getItem("usuarioRegistrado") === "true") {
-    botonRegistro.style.display = "none";
-  }
-}
-
-window.onload = ocultarBotonRegistro;
