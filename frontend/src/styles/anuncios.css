@@ -5,10 +5,10 @@
 }
 
 body{
-    background-color: #cd9c6d
+    background-color: #fff9f4
 }
 .anuncioform{
-    background-color: #ffd1a7;
+    background-color: #fcf9f6;
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
