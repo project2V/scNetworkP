@@ -1,3 +1,15 @@
+const checkSession = () => {
+  const token = localStorage.getItem("token");
+  if (token && token !== undefined) {
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById("postBtn").style.display = "block";
+  } else {
+    document.getElementById("postBtn").style.display = "none";
+    document.getElementById("myModal").style.display = "none";
+  }
+};
+
+window.onload = checkSession();
 import { renderButtons } from "./renderButtons.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {

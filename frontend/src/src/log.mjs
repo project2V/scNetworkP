@@ -10,7 +10,6 @@ loginForm.addEventListener("submit", async (event) => {
     email: email,
     password: password,
   };
-  console.log(inpO);
 
   try {
     const response = await fetch("http://localhost:4000/api/auth/login", {
@@ -23,7 +22,6 @@ loginForm.addEventListener("submit", async (event) => {
     });
 
     const data = await response.json();
-    console.log(data);
 
     if (response.ok) {
       localStorage.setItem("token", data.token);

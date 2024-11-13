@@ -6,6 +6,19 @@ const checkSession = () => {
     document.getElementById("logout").style.display = "none";
   }
 };
+
+const checkAuth = () => {
+  const token = localStorage.getItem("token");
+  if (token && token !== undefined) {
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById("postBtn").style.display = "block";
+  } else {
+    document.getElementById("postBtn").style.display = "none";
+    document.getElementById("myModal").style.display = "none";
+  }
+};
+
+window.onload = checkAuth();
 checkSession();
 
 const logout = async () => {

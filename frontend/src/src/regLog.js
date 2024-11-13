@@ -20,8 +20,6 @@ registerForm.addEventListener("submit", async (event) => {
     address: address,
   };
 
-  console.log(inpO);
-
   try {
     const response = await fetch("http://localhost:4000/api/auth/register", {
       method: "POST",
@@ -32,7 +30,7 @@ registerForm.addEventListener("submit", async (event) => {
     });
 
     const data = await response.json();
-    console.log(data);
+
     if (response.ok) {
       window.location.href = "publicaciones3.html";
     } else {
