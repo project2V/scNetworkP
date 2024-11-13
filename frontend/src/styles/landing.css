@@ -62,9 +62,20 @@ header .darkmode {
   padding: 8px;
   font-size: small;
 }
+.session button{
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+  border-radius: 15px;
+  padding: 8px;
+  font-size: small;
+}
 
 .darkmode .session a {
   color: white;
+}
+.darkmode button{
+  
+  background-color: white;
 }
 
 .session a:hover {
