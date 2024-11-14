@@ -13,9 +13,9 @@ body {
   align-items: center;
 }
 
-body .darkmode {
+.darkmode body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(51, 51, 51) !important;
   height: 100vh;
   display: flex;
   justify-content: center;

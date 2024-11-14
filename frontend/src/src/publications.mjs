@@ -1,15 +1,3 @@
-const checkSession = () => {
-  const token = localStorage.getItem("token");
-  if (token && token !== undefined) {
-    document.getElementById("myModal").style.display = "block";
-    document.getElementById("postBtn").style.display = "block";
-  } else {
-    document.getElementById("postBtn").style.display = "none";
-    document.getElementById("myModal").style.display = "none";
-  }
-};
-
-window.onload = checkSession();
 import { renderButtons } from "./renderButtons.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -38,15 +26,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const publicacionesContainer = document.getElementById("publicaciones");
     data.forEach((publicacion) => {
-      const div = document.createElement("div");
-      div.classList.add("publicacion");
-      div.innerHTML = `
+      const article = document.createElement("article");
+      article.classList.add("contenedor-publi");
+      article.innerHTML = `
                         <h2>${publicacion.title}</h2>
-                        <p>${publicacion.description1}</p>
-                        <p>${publicacion.description2}</p>
-                        <p>${publicacion.amount}</p>
+                        <div class="contenidoPubli">
+                          <p>Problema:${publicacion.description1}</p>
+                          <p>Posible solución:${publicacion.description2}</p>
+                          <p>Monto estimado:${publicacion.amount}</p>
+                        </div>
                         `;
-      publicacionesContainer.appendChild(div);
+      publicacionesContainer.appendChild(article);
     });
   } catch (error) {
     console.error("Error al obtener publicaciones:", error);

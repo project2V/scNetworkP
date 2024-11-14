@@ -1,8 +1,6 @@
 const body = document.querySelector("body");
 
-load();
-
-function load() {
+const load = () => {
   const darkmode = localStorage.getItem("darkmode");
   if (!darkmode) {
     localStorage.setItem("darkmode", "false");
@@ -10,4 +8,5 @@ function load() {
   } else if (darkmode === "true") {
     body.classList.add("darkmode");
   }
-}
+};
+load();

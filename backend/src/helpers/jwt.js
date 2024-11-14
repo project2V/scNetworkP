@@ -3,13 +3,18 @@ import { environments } from "../config/environments.js";
 
 export const createJWT = (payload) => {
   return new Promise((resolve, reject) => {
-    jwt.sign(payload, environments.SECRET, (err, token) => {
-      if (err) {
-        reject("Error al firmar el token");
+    jwt.sign(
+      payload,
+      environments.SECRET,
+      { expiresIn: "1h" },
+      (err, token) => {
+        if (err) {
+          reject("Error al firmar el token");
+        }
+        resolve(token);
+        console.log(token);
       }
-      resolve(token);
-      console.log(token);
-    });
+    );
   });
 };
 
