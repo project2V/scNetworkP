@@ -244,17 +244,17 @@ main {
     z-index: 1000;
   }
 
-  /* Mostrar botón de hamburguesa */
+
   .hamburger {
     display: block;
   }
 
-  /* Mostrar el menú cuando esté activo */
+  
   .menu.active {
     display: flex;
   }
 
-  /* Centrar los elementos en el menú desplegable */
+
   .menu .navegacion,
   .menu .session {
     flex-direction: column;
