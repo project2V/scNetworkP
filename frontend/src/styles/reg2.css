@@ -1,0 +1,71 @@
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: whitesmoke;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.5),
+    rgba(110, 110, 110, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(23 23, 23, 0.2),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+.darkmode .gradient-custom-3 {
+  background: rgb(31, 31, 31);
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(31, 31, 31, 0.5),
+    rgba(17, 17, 17, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(19, 19, 19, 0.7),
+    rgba(10, 10, 10, 0.8)
+  );
+}
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: whitesmoke;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.5),
+    rgba(110, 110, 110, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(23 23, 23, 0.2),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+.btn-success {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #3d3d3d;
+  --bs-btn-border-color: #000000;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: grey;
+  --bs-btn-hover-border-color: #000000;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgb(13, 13, 13);
+  --bs-btn-active-border-color: whitesmoke;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: darkgrey;
+  --bs-btn-disabled-border-color: #000000;
+}

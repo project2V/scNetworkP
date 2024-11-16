@@ -21,20 +21,20 @@ function load() {
 function store(value) {
   localStorage.setItem("darkmode", value);
 }
-document.getElementById("hamburger").addEventListener("click", function() {
+document.getElementById("hamburger").addEventListener("click", function () {
   document.querySelector(".menu").classList.toggle("active");
 });
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
+btn.onclick = function () {
   modal.style.display = "block";
-}
-span.onclick = function() {
+};
+span.onclick = function () {
   modal.style.display = "none";
-}
-window.onclick = function(event) {
+};
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
