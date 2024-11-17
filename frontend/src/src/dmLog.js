@@ -11,6 +11,7 @@ const logLabel1 = document.getElementById("logLabel1");
 const logButton = document.getElementById("logButton");
 const logButton1 = document.getElementById("logButton1");
 const logA = document.getElementById("logA");
+const divForm = document.getElementById("divForm");
 
 const load = () => {
   const darkmode = localStorage.getItem("darkmode");
@@ -31,6 +32,7 @@ const load = () => {
     logButton1.setAttribute("style", "color: white");
     logA.setAttribute("style", "color: white");
     logp3.setAttribute("style", "color: white");
+    divForm.setAttribute("data-bs-theme", "dark");
   }
 };
 

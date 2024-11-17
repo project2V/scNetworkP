@@ -21,7 +21,7 @@
       <div class="container py-5 h-100">
         <div
           class="row d-flex justify-content-center align-items-center h-100"
-          data-bs-theme="dark"
+          id="divForm"
         >
           <div class="col-xl-10">
             <div class="card rounded-3 text-black">
@@ -37,7 +37,7 @@
                       <h4 id="logH4" class="mt-1 mb-5 pb-1">Tu Pueblo Ideal</h4>
                     </div>
 
-                    <form>
+                    <form id="login-form">
                       <p id="logP">Iniciar Sesión</p>
 
                       <div data-mdb-input-init class="form-outline mb-4">
@@ -47,10 +47,7 @@
                           class="form-control"
                           placeholder="ejemplo@ejemplo.com"
                         />
-                        <label
-                          id="logLabel"
-                          class="form-label"
-                          for="form2Example11"
+                        <label id="logLabel" class="form-label" for="email"
                           >Email</label
                         >
                       </div>
@@ -65,17 +62,17 @@
                         <label
                           id="logLabel1"
                           class="form-label"
-                          for="form2Example22"
+                          for="contrasena"
                           >Contraseña</label
                         >
                       </div>
 
                       <div class="text-center pt-1 mb-3 pb-1">
                         <button
+                          type="submit"
                           data-mdb-button-init
                           data-mdb-ripple-init
                           class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-1"
-                          type="submit"
                           style="color: black"
                           id="logButton"
                         >
@@ -102,6 +99,7 @@
                           data-mdb-ripple-init
                           class="btn btn-outline-warning"
                           id="logButton1"
+                          onclick="location.href='register.html'"
                         >
                           Registrate aquí
                         </button>
