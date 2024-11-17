@@ -28,11 +28,11 @@ registerForm.addEventListener("submit", async (event) => {
         "Content-Type": "application/json",
       },
     });
-
+    console.log(response);
     const data = await response.json();
 
     if (response.ok) {
-      window.location.href = "publicaciones3.html";
+      window.location.href = "login.html";
     } else {
       alert("Error al registrar");
     }
