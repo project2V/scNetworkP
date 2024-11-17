@@ -33,13 +33,13 @@
                 <div class="card-body p-5">
                   <h2 class="text-uppercase text-center mb-8">Registrarse</h2>
 
-                  <form>
+                  <form id="reg-form">
                     <div class="row">
                       <div class="col-md-6 mb-8">
                         <div data-mdb-input-init class="form-outline">
                           <input
                             type="text"
-                            id="form3Example1m"
+                            id="name"
                             class="form-control form-control-lg"
                             required
                           />
@@ -55,7 +55,7 @@
                         <div data-mdb-input-init class="form-outline">
                           <input
                             type="text"
-                            id="form3Example1n"
+                            id="surname"
                             class="form-control form-control-lg"
                             required
                           />
@@ -69,7 +69,7 @@
                     <div data-mdb-input-init class="form-outline mb-8">
                       <input
                         type="text"
-                        id="form3Example4cg"
+                        id="dni"
                         class="form-control form-control-lg"
                         required
                       />
@@ -81,7 +81,7 @@
                     <div data-mdb-input-init class="form-outline mb-8">
                       <input
                         type="tel"
-                        id="form3Example4cg"
+                        id="phoneNumber"
                         class="form-control form-control-lg"
                         required
                       />
@@ -93,7 +93,7 @@
                     <div data-mdb-input-init class="form-outline mb-8">
                       <input
                         type="email"
-                        id="form3Example4cg"
+                        id="email"
                         class="form-control form-control-lg"
                         required
                       />
@@ -105,19 +105,19 @@
                     <div data-mdb-input-init class="form-outline mb-8">
                       <input
                         type="password"
-                        id="form3Example4cg"
+                        id="password"
                         class="form-control form-control-lg"
                         required
                       />
                       <label class="form-label" for="form3Example4cg"
-                        >Password</label
+                        >Contraseña</label
                       >
                     </div>
 
                     <div data-mdb-input-init class="form-outline mb-8">
                       <input
-                        type=""
-                        id="form3Example4cg"
+                        type="text"
+                        id="adress"
                         class="form-control form-control-lg"
                         required
                       />
@@ -128,7 +128,7 @@
 
                     <div class="d-flex justify-content-center">
                       <button
-                        type="button"
+                        type="submit"
                         data-mdb-button-init
                         data-mdb-ripple-init
                         class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
@@ -140,7 +140,7 @@
 
                     <p class="text-center text-muted mt-10 mb-6">
                       Have already an account?
-                      <a href="#!" class="fw-bold text-body"
+                      <a href="login.html" class="fw-bold text-body"
                         ><u>Login here</u></a
                       >
                     </p>
