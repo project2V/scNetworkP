@@ -21,6 +21,32 @@
   );
 }
 
+.darkmode .gradient-custom-2 {
+  background: rgb(23, 23, 23);
+
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(23, 23, 23),
+    rgb(23, 23, 23),
+    black
+  );
+
+  background: linear-gradient(
+    to right,
+    rgb(23, 23, 23),
+    rgb(23, 23, 23),
+    black
+  );
+}
+
+label .darkmode {
+  color: white;
+}
+
+h4 .darkmode {
+  color: white;
+}
+
 @media (min-width: 768px) {
   .gradient-form {
     height: 100vh !important;
