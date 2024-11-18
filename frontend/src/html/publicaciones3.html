@@ -6,6 +6,12 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="../styles/landing.css" />
     <link rel="stylesheet" href="../styles/tailwind.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
   </head>
   <body class="">
     <header>
@@ -16,23 +22,20 @@
         />
         <h2>Tu Pueblo Ideal</h2>
       </div>
-      <button class="hamburger" id="hamburger">
-        ☰
-      </button>
-    <nav class="menu">
-      <div class="navegacion">
-        <a href="votaciones.html">Elige lo mejor en tu pueblo</a>
-        <a href="publicaciones3.html">Publicaciones</a>
-        <a href="anuncios.html">Anuncios</a>
-      </div>
-      <div class="session">
-        <a id="registerButton" href="register.html">Registrarse</a>
-        <a id="loginButton" href="login.html">Iniciar Sesión</a>
-        <a class="logout" id="logout" href="">Cerrar Sesión</a>
-      </div>
-    </nav>
+      <button class="hamburger" id="hamburger">☰</button>
+      <nav class="menu">
+        <div class="navegacion">
+          <a href="votaciones.html">Elige lo mejor en tu pueblo</a>
+          <a href="publicaciones3.html">Publicaciones</a>
+          <a href="anuncios.html">Anuncios</a>
+        </div>
+        <div class="session">
+          <a id="registerButton" href="register.html">Registrarse</a>
+          <a id="loginButton" href="login.html">Iniciar Sesión</a>
+          <a class="logout" id="logout" href="">Cerrar Sesión</a>
+        </div>
+      </nav>
       <button class="bdark" id="bdark">Cambiar Modo</button>
-      
     </header>
 
     <main>
@@ -58,55 +61,37 @@
         </article>
         <article class="contenedor-publi">
           <div class="gatoElfo">
-            <img
-              src="../images/cuteKitty.png"
-              alt=""
-            />
+            <img src="../images/cuteKitty.png" alt="" />
             <span>Usuario 2</span>
           </div>
           <div class="contenidoPubli">
             <img src="../images/bache.jpg" alt="" />
-            <p>
-              Mi auto se atasco ayer por culpa de este bache.. 
-            </p>
+            <p>Mi auto se atasco ayer por culpa de este bache..</p>
           </div>
         </article>
         <article class="contenedor-publi">
           <div class="gatoElfo">
-            <img
-              src="../images/profilephoto.png"
-              alt=""
-            />
+            <img src="../images/profilephoto.png" alt="" />
             <span>Usuario 3</span>
           </div>
           <div class="contenidoPubli">
             <img src="../images/tuberia-rota.jpg" alt="" />
-            <p>
-              Estas tuberias necesitan mantenimiento urgente
-            </p>
+            <p>Estas tuberias necesitan mantenimiento urgente</p>
           </div>
         </article>
         <article class="contenedor-publi">
           <div class="gatoElfo">
-            <img
-              src="../images/gatitoNaranja.jpg"
-              alt=""
-            />
+            <img src="../images/gatitoNaranja.jpg" alt="" />
             <span>Usuario 4</span>
           </div>
           <div class="contenidoPubli">
             <img src="../images/731878.jpg" alt="" />
-            <p>
-              Las calles estan feas, hay que asfaltarlas
-            </p>
+            <p>Las calles estan feas, hay que asfaltarlas</p>
           </div>
         </article>
         <article class="contenedor-publi">
           <div class="gatoElfo">
-            <img
-              src="../images/images.jfif"
-              alt=""
-            />
+            <img src="../images/images.jfif" alt="" />
             <span>Usuario 5</span>
           </div>
           <div class="contenidoPubli">
@@ -126,31 +111,88 @@
           </div>
           <div class="contenidoPubli">
             <img src="../images/img-20181217-wa00311-774x400.jpg" alt="" />
-            <p>
-            el hospital esta en mal estado
-            </p>
+            <p>el hospital esta en mal estado</p>
           </div>
         </article>
-        <div class="dropdown" id="create-div">
-          
-          <button class="dropdown-post" id="myBtn">Crear publicacion</button>
-          </div>
-        </div>
-        <div id="myModal" class="modal">
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        data-bs-whatever="@mdo"
+      >
+        Open modal for @mdo
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        data-bs-whatever="@fat"
+      >
+        Open modal for @fat
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        data-bs-whatever="@getbootstrap"
+      >
+        Open modal for @getbootstrap
+      </button>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
           <div class="modal-content">
-            <span class="close">&times;</span>
-            <input type="text" id="title" placeholder="Titulo de la publicación">
-            <input type="text" id="description1" placeholder="Describa su problema">
-            <input type="text" id="description2" placeholder="Describa una posible solución">
-            <input type="number" id="amount" placeholder="Presupuesto estimado">
-            <button class="btn" id="postBtn">Publicar</button>
-            
-            
-            
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                New message
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label"
+                    >Recipient:</label
+                  >
+                  <input type="text" class="form-control" id="recipient-name" />
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label"
+                    >Message:</label
+                  >
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Send message
+              </button>
+            </div>
           </div>
         </div>
-        
-      
       </div>
     </main>
 
@@ -159,5 +201,10 @@
     <script type="module" src="../src/renderButtons.mjs"></script>
     <script type="module" src="../src/logout.mjs"></script>
     <script type="module" src="../src/postPub-auth.mjs"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
