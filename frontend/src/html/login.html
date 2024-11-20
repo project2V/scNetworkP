@@ -4,38 +4,144 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio de Sesión</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../styles/log.css" />
   </head>
   <body>
-    <div class="container">
-      <h2>Inicio de Sesión</h2>
-      <form action="/api/auth/login" method="post" id="login-form">
-        <div class="form-group">
-          <label for="correo">Correo:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
+    <section
+      id="logSection"
+      class="h-100 gradient-form"
+      style="background-color: #eee"
+    >
+      <div class="container py-5 h-100">
+        <div
+          class="row d-flex justify-content-center align-items-center h-100"
+          id="divForm"
+        >
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-2">
+                <div class="col-lg-6">
+                  <div class="card-body p-md-5 mx-md-1">
+                    <div class="text-center">
+                      <img
+                        src="../images/pngtree-colorful-logo-design-png-transparent-png-image_3536702-removebg-preview.png"
+                        style="width: 185px"
+                        alt="logo"
+                      />
+                      <h4 id="logH4" class="mt-1 mb-5 pb-1">Tu Pueblo Ideal</h4>
+                    </div>
 
-        <div class="form-group">
-          <label for="contraseña">Contraseña:</label>
-          <input type="password" id="contraseña" name="contraseña" required />
-        </div>
+                    <form id="login-form">
+                      <p id="logP">Iniciar Sesión</p>
 
-        <button type="submit" id="logear">Iniciar Sesión</button>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="usercheck"
-            checked
-          />
-          <label class="form-check-label" for=""
-            >Guardar mis datos de registro</label
-          >
+                      <div data-mdb-input-init class="form-outline mb-4">
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                          placeholder="ejemplo@ejemplo.com"
+                        />
+                        <label id="logLabel" class="form-label" for="email"
+                          >Email</label
+                        >
+                      </div>
+
+                      <div data-mdb-input-init class="form-outline mb-4">
+                        <input
+                          type="password"
+                          id="contrasena"
+                          class="form-control"
+                          placeholder="Introduzca su contraseña"
+                        />
+                        <label
+                          id="logLabel1"
+                          class="form-label"
+                          for="contrasena"
+                          >Contraseña</label
+                        >
+                      </div>
+
+                      <div class="text-center pt-1 mb-3 pb-1">
+                        <button
+                          type="submit"
+                          data-mdb-button-init
+                          data-mdb-ripple-init
+                          class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-1"
+                          style="color: black"
+                          id="logButton"
+                        >
+                          Inciar Sesión
+                        </button>
+                      </div>
+                      <a
+                        class="text-muted mb-3"
+                        href="#!"
+                        style="display: flex; justify-content: center"
+                        id="logA"
+                        >Se olvidó su contraseña?</a
+                      >
+
+                      <div
+                        class="d-flex align-items-center justify-content-center pb-4"
+                      >
+                        <p id="logP3" class="mb-0 me-2" id="logP3">
+                          No tienes una cuenta?
+                        </p>
+                        <button
+                          type="button"
+                          data-mdb-button-init
+                          data-mdb-ripple-init
+                          class="btn btn-outline-warning"
+                          id="logButton1"
+                          onclick="location.href='register.html'"
+                        >
+                          Registrate aquí
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-6 d-flex align-items-center gradient-custom-2"
+                >
+                  <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                    <h2
+                      class="mb-4"
+                      style="display: flex; justify-content: center"
+                      id="logH2"
+                    >
+                      Bienvenido/a!
+                    </h2>
+                    <p class="medium mb-0" style="color: black" id="logP1">
+                      Inicia sesión para compartir tus experiencas con los demás
+                      usuarios e interactuar con los mismos.
+                    </p>
+                    <p id="logP2" class="medium mb-0" style="color: black">
+                      Si aún no tienes una cuenta, regístrate hoy mismo y únete
+                      a nuestra comunidad. Estamos encantados de tenerte con
+                      nosotros.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </section>
   </body>
   <script type="module" src="../src/log.mjs"></script>
   <script type="module" src="../src/renderButtons.mjs"></script>
+  <script src="../src/dmLog.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
 </html>

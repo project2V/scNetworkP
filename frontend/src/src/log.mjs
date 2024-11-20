@@ -4,12 +4,14 @@ loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const email = document.getElementById("email").value;
-  const password = document.getElementById("contraseña").value;
+  const password = document.getElementById("contrasena").value;
 
   const inpO = {
     email: email,
     password: password,
   };
+
+  console.log(inpO);
 
   try {
     const response = await fetch("http://localhost:4000/api/auth/login", {
