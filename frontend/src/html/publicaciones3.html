@@ -40,80 +40,7 @@
 
     <main>
       <div class="post-container" id="publicaciones">
-        <h3 class="tituloPubli">Publicaciones</h3>
-        <article class="contenedor-publi">
-          <div class="gatoElfo">
-            <img
-              src="../images/gatos-elfo_6b131528_480740282_240906132928_600x600.jpg"
-              alt=""
-            />
-            <span>Usuario 1</span>
-          </div>
-          <div class="contenidoPubli">
-            <img src="../images/Calles en mal estado.jfif" alt="" />
-            <p>
-              En el barrio circuito 5 especificamente en la avenida los
-              constituyentes "arreglaron la avenida" pero hace 5 meses sigue
-              todo roto y cuando voy manejando parece que voy a volar cada 5
-              metros ayuda.
-            </p>
-          </div>
-        </article>
-        <article class="contenedor-publi">
-          <div class="gatoElfo">
-            <img src="../images/cuteKitty.png" alt="" />
-            <span>Usuario 2</span>
-          </div>
-          <div class="contenidoPubli">
-            <img src="../images/bache.jpg" alt="" />
-            <p>Mi auto se atasco ayer por culpa de este bache..</p>
-          </div>
-        </article>
-        <article class="contenedor-publi">
-          <div class="gatoElfo">
-            <img src="../images/profilephoto.png" alt="" />
-            <span>Usuario 3</span>
-          </div>
-          <div class="contenidoPubli">
-            <img src="../images/tuberia-rota.jpg" alt="" />
-            <p>Estas tuberias necesitan mantenimiento urgente</p>
-          </div>
-        </article>
-        <article class="contenedor-publi">
-          <div class="gatoElfo">
-            <img src="../images/gatitoNaranja.jpg" alt="" />
-            <span>Usuario 4</span>
-          </div>
-          <div class="contenidoPubli">
-            <img src="../images/731878.jpg" alt="" />
-            <p>Las calles estan feas, hay que asfaltarlas</p>
-          </div>
-        </article>
-        <article class="contenedor-publi">
-          <div class="gatoElfo">
-            <img src="../images/images.jfif" alt="" />
-            <span>Usuario 5</span>
-          </div>
-          <div class="contenidoPubli">
-            <img src="../images/bancaRota.jpg" alt="" />
-            <p>
-              ya no tengo donde sentarme a descansar cuando termino de trotar
-            </p>
-          </div>
-        </article>
-        <article class="contenedor-publi">
-          <div class="gatoElfo">
-            <img
-              src="../images/gatos-elfo_6b131528_480740282_240906132928_600x600.jpg"
-              alt=""
-            />
-            <span>Usuario 6</span>
-          </div>
-          <div class="contenidoPubli">
-            <img src="../images/img-20181217-wa00311-774x400.jpg" alt="" />
-            <p>el hospital esta en mal estado</p>
-          </div>
-        </article>
+        
       </div>
       <div class="dropdown" id="create-div">
           
@@ -123,23 +50,31 @@
       <div id="myModal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva publicación</h1>
             <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <label for="recipient-name" class="col-form-label">Título</label>
+                <input type="text" class="form-control" id="title">
               </div>
               <div class="mb-3">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
+                <label for="message-text" class="col-form-label">Problema</label>
+                <input type="text" class="form-control" id="description1"></input>
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Posible solución</label>
+                <input type="text" class="form-control" id="description2"></input>
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Presupuesto estimado<label>
+                <input type="text" class="form-control" id="amount"></input>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Send message</button>
+            <button id="postBtn" type="button" class="btn btn-primary">Crear</button>
           </div>
         </div>
       </div>

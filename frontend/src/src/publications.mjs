@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const article = document.createElement("article");
       article.classList.add("contenedor-publi");
       article.innerHTML = `
-                        <h2>${publicacion.title}</h2>
+                        <h3>${publicacion.title}</h3>
                         <div class="contenidoPubli">
                           <p>Problema:${publicacion.description1}</p>
                           <p>Posible solución:${publicacion.description2}</p>
