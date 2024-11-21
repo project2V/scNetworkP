@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
 import "dotenv/config";
-import { token } from "morgan";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
