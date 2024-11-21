@@ -24,14 +24,21 @@ export const publicationsModel = sequelize.define("publications", {
     allowNull: false,
   },
   category: {
-    type: DataTypes.ENUM("Salud", "Educacion", "Vivienda", "Otro"),
+    type: DataTypes.ENUM(
+      "Salud",
+      "Educacion",
+      "Vivienda",
+      "Obras",
+      "Social",
+      "Otro"
+    ),
     allowNull: false,
   },
   publicationDate: {
     type: DataTypes.DATEONLY,
     allowNull: true,
   },
-  userid: {
+  usersId: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },

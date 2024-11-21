@@ -4,7 +4,7 @@ import { publicationsModel } from "../models/pub.models.js";
 import { Sequelize } from "sequelize";
 
 // Relacionamos la publicación con el usuario
-publicationsModel.belongsTo(userModel, { foreignKey: "userId" });
-userModel.hasMany(publicationsModel, { foreignKey: "userId" });
+userModel.hasMany(publicationsModel, { foreignKey: "usersId" });
+publicationsModel.belongsTo(userModel, { foreignKey: "usersId" });
 
 sequelize.sync();

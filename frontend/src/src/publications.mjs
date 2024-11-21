@@ -47,6 +47,7 @@ const postPublication = document.querySelector("#postBtn");
 
 postPublication.addEventListener("click", async (event) => {
   event.preventDefault();
+  const userID = localStorage.getItem("userId");
 
   const title = document.getElementById("title").value;
   const description1 = document.getElementById("description1").value;
@@ -60,6 +61,7 @@ postPublication.addEventListener("click", async (event) => {
     category: category,
     description2: description2,
     amount: amount,
+    usersId: userID,
   };
   console.log(inpO);
 

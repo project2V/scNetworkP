@@ -14,7 +14,7 @@ export const createUser = async (user) => {
     const newUser = await userModel.create(user);
     return newUser;
   } catch (err) {
-    console.error(err);
+    console.log(err);
     throw new Error("Error creating user");
   }
 };
