@@ -36,8 +36,38 @@ document.addEventListener("DOMContentLoaded", async () => {
                           <p><b>Posible solución:</b> ${publicacion.description2}</p>
                           <p><b>Monto estimado:</b>$${publicacion.amount}</p>
                         </div>
+                        <div class="botonesPubli">
+                          <button id="deleteBtn" class="boton-eliminar" data-id="${publicacion.id}">Eliminar</button>
                         `;
       publicacionesContainer.appendChild(article);
+    });
+
+    document.querySelectorAll(".boton-eliminar").forEach((deletepBtn) => {
+      deletepBtn.addEventListener("click", async (event) => {
+        const deleteBt = document.getElementById("deleteBtn");
+        const id = deleteBt.getAttribute("data-id");
+        event.preventDefault();
+        try {
+          const response = await fetch(
+            `http://localhost:4000/api/pub/delete/${id}`,
+            {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
+            }
+          );
+          const data = await response.json();
+          if (response.ok) {
+            alert("Publicación eliminada con éxito");
+            location.reload();
+          } else {
+            alert("Error al eliminar la publicación");
+            console.log("Error:", data);
+          }
+        } catch (error) {
+          console.log(error, "No se pudo borrar");
+          alert("Error de conexión. Por favor, intenta más tarde.");
+        }
+      });
     });
   } catch (error) {
     console.error("Error al obtener publicaciones:", error);
@@ -47,7 +77,6 @@ const postPublication = document.querySelector("#postBtn");
 
 postPublication.addEventListener("click", async (event) => {
   event.preventDefault();
-  const userID = localStorage.getItem("userId");
 
   const title = document.getElementById("title").value;
   const description1 = document.getElementById("description1").value;
@@ -61,7 +90,6 @@ postPublication.addEventListener("click", async (event) => {
     category: category,
     description2: description2,
     amount: amount,
-    usersId: userID,
   };
   console.log(inpO);
 
@@ -74,7 +102,6 @@ postPublication.addEventListener("click", async (event) => {
       },
     });
     const data = await response.json();
-    console.log(data);
     console.log(response);
 
     if (response.ok) {
