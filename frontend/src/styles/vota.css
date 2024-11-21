@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #cd9c6d;
+    background-color: #ffffff;
 }
 
 header {
@@ -19,6 +19,20 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   }
+  .header-profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.header-profile-picture:hover {
+    transform: scale(1.1);
+}
 
   .session{
     display: flex;
@@ -37,7 +51,7 @@ header {
 
   .session a:hover{
     color: rgb(5, 5, 5);
-    background-color: #cd9c6d;
+    background-color: #f5e6d8;
     transition: 0.5s;
   }
 
@@ -66,7 +80,7 @@ header {
     border-bottom: solid 1px black;
   }
   .votaform{
-    background-color: #ffd1a7;
+    background-color: #f8f6f6;
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
@@ -89,7 +103,7 @@ header {
   width: 50px;
 }
 .votar button{
-  background-color: rgb(224, 161, 42);
+  background-color: rgb(250, 250, 250);
   color: #fff;
   border: 2px;
   padding: 10px 50px; 
@@ -98,5 +112,5 @@ header {
   transition: background-color 0.3s;
 }
 .votar button:hover{
-  background-color: #8d6236;
+  background-color: #0c0c0c;
 }

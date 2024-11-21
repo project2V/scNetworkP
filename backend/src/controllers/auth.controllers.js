@@ -4,7 +4,6 @@ import {
   getUserByEmailAndPassword,
 } from "../services/user.service.js";
 import { createJWT } from "../helpers/jwt.js";
-import { sendVerificationEmail } from "../services/mail.service.js";
 
 export const registerUser = async (req, res) => {
   try {
@@ -16,7 +15,6 @@ export const registerUser = async (req, res) => {
     }
 
     const newUser = await createUser(user);
-    const mail = sendVerificationEmail(newUser.email);
 
     res.status(201).json({ token: token });
   } catch (err) {

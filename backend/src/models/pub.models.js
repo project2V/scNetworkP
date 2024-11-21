@@ -23,6 +23,10 @@ export const publicationsModel = sequelize.define("publications", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  category: {
+    type: DataTypes.ENUM("Salud", "Educacion", "Vivienda", "Otro"),
+    allowNull: false,
+  },
   publicationDate: {
     type: DataTypes.DATEONLY,
     allowNull: true,

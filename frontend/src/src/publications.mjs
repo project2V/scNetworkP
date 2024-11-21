@@ -30,10 +30,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       article.classList.add("contenedor-publi");
       article.innerHTML = `
                         <h3>${publicacion.title}</h3>
+                        <h5><b>Categoría:</b> ${publicacion.category}</h5>
                         <div class="contenidoPubli">
-                          <p>Problema:${publicacion.description1}</p>
-                          <p>Posible solución:${publicacion.description2}</p>
-                          <p>Monto estimado:${publicacion.amount}</p>
+                          <p><b>Problema:</b> ${publicacion.description1}</p>
+                          <p><b>Posible solución:</b> ${publicacion.description2}</p>
+                          <p><b>Monto estimado:</b>$${publicacion.amount}</p>
                         </div>
                         `;
       publicacionesContainer.appendChild(article);
@@ -49,12 +50,14 @@ postPublication.addEventListener("click", async (event) => {
 
   const title = document.getElementById("title").value;
   const description1 = document.getElementById("description1").value;
+  const category = document.getElementById("category").value;
   const description2 = document.getElementById("description2").value;
   const amount = document.getElementById("amount").value;
 
   const inpO = {
     title: title,
     description1: description1,
+    category: category,
     description2: description2,
     amount: amount,
   };
