@@ -1,0 +1,236 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color:black
+}
+body.darkmode {
+    background-color: rgb(31, 31, 31);
+    color: white;
+  }
+  header .darkmode {
+    box-shadow: 0 4px 6px darkgray;
+  }
+  
+  .darkmode main {
+    background-color: rgb(31, 31, 31);
+    color: white;
+  }
+  
+  .darkmode .post-container {
+    background-color: rgb(31, 31, 31);
+    color: white;
+  }
+  
+  .darkmode header {
+    background-color: rgb(31, 31, 31);
+    color: white;
+  }
+  
+  .darkmode header a {
+    color: white;
+  }
+  .darkmode .session a {
+    color: white;
+  }
+  .darkmode button {
+    background-color: white;
+  }
+  .darkmode .session a:hover {
+    background-color: white;
+    color: rgb(31, 31, 31);
+  }
+
+  .darkmode .navegacion a {
+    color: white;
+    border-bottom: solid 1px white;
+  }
+  .bdark {
+    border-radius: 8px;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    font-size: x-small;
+  }
+  
+  .darkmode .bdark {
+    background-color: white;
+    color: rgb(31, 31, 31);
+  }      
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.profile-container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: auto; /* Center horizontally */
+    margin-top: 10vh; /* Center vertically with space from the top */
+}
+.header-profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.header-profile-picture:hover {
+    transform: scale(1.1);
+}
+
+  .session {
+    display: flex;
+    padding: 2px;
+    gap: 15px;
+  }
+  
+  .session a {
+    text-decoration: none;
+    color: rgb(31, 31, 31);
+    border-radius: 15px;
+    padding: 8px;
+    font-size: small;
+  }
+  .session button {
+    text-decoration: none;
+    color: rgb(31, 31, 31);
+    border-radius: 15px;
+    padding: 8px;
+    font-size: small;
+  }
+  .session a:hover {
+    color: white;
+    background-color: rgb(31, 31, 31);
+    transition: 0.5s;
+  }
+  .miLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .miLogo img {
+    width: 50px;
+  }
+  
+  .navegacion {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 15px;
+  }
+  
+  .navegacion a {
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    border-bottom: solid 1px rgb(31, 31, 31);
+  }
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(31, 31, 31);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: rgb(41, 40, 40);
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  
+
+    .hamburger {
+      display: block;
+    }
+  
+
+    .menu.active {
+      display: flex;
+    }
+  
+
+    .menu .navegacion,
+    .menu .session {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+  @media (max-width: 482px) {
+    .session {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  .menu {
+    display: flex;
+    gap: 20px;
+  }      
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+
+  input[type="text"],
+  input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }

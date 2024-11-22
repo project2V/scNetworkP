@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="../styles/profileup.css">
+</head>
+<body>
+    <header>
+        <div class="miLogo">
+            <img
+                src="../images/pngtree-colorful-logo-design-png-transparent-png-image_3536702-removebg-preview.png"
+                alt=""
+            />
+            <h2>Tu Pueblo Ideal</h2>
+        </div>
+            <button class="hamburger" id="hamburger">
+            ☰
+            </button>
+        <nav class="menu">
+                <div class="navegacion">
+                <a href="votaciones.html">Mejora tu pueblo</a>
+                <a href="publicaciones3.html">Publicaciones</a>
+                <a href="anuncios.html">Anuncios</a>
+                </div>
+            <div class="session">
+            <a id="registerButton" href="register.html">Registrarse</a>
+            <a id="loginButton" href="login.html">Iniciar Sesión</a>
+            <a class="logout" id="logout" href="">Cerrar Sesión</a>
+            <a href="profileup.html">
+                <img id="header-profile-pic" class="header-profile-picture" src="../images/cuteKitty.png" alt="Perfil">
+            </a>
+            </div>
+        </nav>
+        <button class="bdark" id="bdark">Cambiar Modo</button>
+          
+    </header>
+  <div class="profile-container">
+    <h1>Editar Perfil</h1>
+    <form>
+    
+      <img id="preview" class="profile-picture" src="../images/cuteKitty.png" alt="Foto de Perfil">
+      <input type="file" id="profile-pic" accept="image/*" onchange="updatePreview()">
+
+
+      <input type="text" id="username" placeholder="Nuevo nombre de usuario" required>
+
+   
+      <button type="submit" id="Updatepro">Guardar Cambios</button>
+    </form>
+  </div>
+
+  <script src="../src/profileUp.js"> </script>
+</body>
+</html>

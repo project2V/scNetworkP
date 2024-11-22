@@ -30,13 +30,44 @@ document.addEventListener("DOMContentLoaded", async () => {
       article.classList.add("contenedor-publi");
       article.innerHTML = `
                         <h3>${publicacion.title}</h3>
+                        <h5><b>Categoría:</b> ${publicacion.category}</h5>
                         <div class="contenidoPubli">
-                          <p>Problema:${publicacion.description1}</p>
-                          <p>Posible solución:${publicacion.description2}</p>
-                          <p>Monto estimado:${publicacion.amount}</p>
+                          <p><b>Problema:</b> ${publicacion.description1}</p>
+                          <p><b>Posible solución:</b> ${publicacion.description2}</p>
+                          <p><b>Monto estimado:</b>$${publicacion.amount}</p>
                         </div>
+                        <div class="botonesPubli">
+                          <button id="deleteBtn" class="boton-eliminar" data-id="${publicacion.id}">Eliminar</button>
                         `;
       publicacionesContainer.appendChild(article);
+    });
+
+    document.querySelectorAll(".boton-eliminar").forEach((deletepBtn) => {
+      deletepBtn.addEventListener("click", async (event) => {
+        const deleteBt = document.getElementById("deleteBtn");
+        const id = deleteBt.getAttribute("data-id");
+        event.preventDefault();
+        try {
+          const response = await fetch(
+            `http://localhost:4000/api/pub/delete/${id}`,
+            {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
+            }
+          );
+          const data = await response.json();
+          if (response.ok) {
+            alert("Publicación eliminada con éxito");
+            location.reload();
+          } else {
+            alert("Error al eliminar la publicación");
+            console.log("Error:", data);
+          }
+        } catch (error) {
+          console.log(error, "No se pudo borrar");
+          alert("Error de conexión. Por favor, intenta más tarde.");
+        }
+      });
     });
   } catch (error) {
     console.error("Error al obtener publicaciones:", error);
@@ -49,12 +80,14 @@ postPublication.addEventListener("click", async (event) => {
 
   const title = document.getElementById("title").value;
   const description1 = document.getElementById("description1").value;
+  const category = document.getElementById("category").value;
   const description2 = document.getElementById("description2").value;
   const amount = document.getElementById("amount").value;
 
   const inpO = {
     title: title,
     description1: description1,
+    category: category,
     description2: description2,
     amount: amount,
   };
@@ -69,7 +102,6 @@ postPublication.addEventListener("click", async (event) => {
       },
     });
     const data = await response.json();
-    console.log(data);
     console.log(response);
 
     if (response.ok) {

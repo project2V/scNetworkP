@@ -16,7 +16,7 @@ export const registerUser = async (req, res) => {
     }
 
     const newUser = await createUser(user);
-    const token = await createJWT({ user: newUser.id });
+    const token = await createJWT({ id: newUser.id });
 
     res.status(201).json({ token: token });
   } catch (err) {

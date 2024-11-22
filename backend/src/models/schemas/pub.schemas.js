@@ -6,7 +6,7 @@ export const publiSchema = [
     .notEmpty()
     .withMessage("Title is required")
     .isString()
-    .isLength({ min: 4, max: 80 })
+    .isLength({ min: 4, max: 800 })
     .withMessage("Title must be between 4 and 80 characters long")
     .trim(),
   //body("content").isString(),
@@ -15,7 +15,7 @@ export const publiSchema = [
     .notEmpty()
     .withMessage("Description is required")
     .isString()
-    .isLength({ min: 10, max: 100 })
+    .isLength({ min: 10, max: 1000 })
     .withMessage("Description must be between 10 and 500 characters long")
     .trim(),
   body("description2")
@@ -23,7 +23,7 @@ export const publiSchema = [
     .notEmpty()
     .withMessage("Description is required")
     .isString()
-    .isLength({ min: 10, max: 100 })
+    .isLength({ min: 10, max: 1000 })
     .withMessage("Description must be between 10 and 500 characters long")
     .trim(),
   body("amount")
@@ -31,7 +31,7 @@ export const publiSchema = [
     .notEmpty()
     .withMessage("Amount is required")
     .isNumeric()
-    .isLength({ min: 1, max: 100 })
+    .isLength({ min: 1, max: 100000000000 })
     .withMessage("Amount must be between 1 and 100 characters long")
     .trim(),
   /*body("publicationDate")

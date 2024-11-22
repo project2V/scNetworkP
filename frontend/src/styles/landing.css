@@ -48,6 +48,20 @@ header .darkmode {
 .darkmode header a {
   color: white;
 }
+.header-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.header-profile-picture:hover {
+  transform: scale(1.1);
+}
 
 .session {
   display: flex;
@@ -129,7 +143,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  grid-column: 2/3;
+  grid-column: 1/3;
 }
 
 .contenedor-publi {
@@ -207,6 +221,20 @@ main {
   padding: 8px 16px;
 }
 
+.dropdown-post {
+  border-radius: 50%;
+  position: fixed;
+  top: 750px;
+  left: 3px;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+}
+
 .darkmode .dropdown-post {
   background-color: white;
   color: rgb(31, 31, 31);
@@ -244,17 +272,14 @@ main {
     z-index: 1000;
   }
 
-  /* Mostrar botón de hamburguesa */
   .hamburger {
     display: block;
   }
 
-  /* Mostrar el menú cuando esté activo */
   .menu.active {
     display: flex;
   }
 
-  /* Centrar los elementos en el menú desplegable */
   .menu .navegacion,
   .menu .session {
     flex-direction: column;
@@ -321,4 +346,32 @@ main {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.boton-eliminar {
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  background-color: white;
+  color: red;
+}
+
+.darkmode .boton-eliminar {
+  background-color: white;
+  color: red;
+}
+
+.darkmode .boton-eliminar:hover {
+  background-color: red;
+  color: white;
 }
