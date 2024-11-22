@@ -3,15 +3,11 @@ import * as jwt from "jsonwebtoken";
 import { environments } from "../config/environments.js";
 import { hashString } from "../helpers/hash.js";
 import { compare } from "bcrypt";
-import { sendVerificationEmail } from "../services/mail.service.js";
-import { createJWT } from "../helpers/jwt.js";
 
 export const createUser = async (user) => {
   try {
     const hashedPassword = await hashString(user.password);
     user.password = hashedPassword;
-    const token = await createJWT({ id: user.id });
-    const mail = sendVerificationEmail(user.email, token);
 
     const newUser = await userModel.create(user);
     return newUser;
