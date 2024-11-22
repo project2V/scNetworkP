@@ -4,7 +4,6 @@ import {
   getUserByEmailAndPassword,
 } from "../services/user.service.js";
 import { createJWT } from "../helpers/jwt.js";
-import { sendVerificationEmail } from "../services/mail.service.js";
 
 export const registerUser = async (req, res) => {
   try {

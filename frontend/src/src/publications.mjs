@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <h3>${publicacion.title}</h3>
                         <h5><b>Categoría:</b> ${publicacion.category}</h5>
                         <div class="contenidoPubli">
+                          <img src="${publicacion.content.value}" alt="Imagen de la publicación">
                           <p><b>Problema:</b> ${publicacion.description1}</p>
                           <p><b>Posible solución:</b> ${publicacion.description2}</p>
                           <p><b>Monto estimado:</b>$${publicacion.amount}</p>
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
   } catch (error) {
+    console.log(error);
     console.error("Error al obtener publicaciones:", error);
   }
 });
@@ -79,6 +81,7 @@ postPublication.addEventListener("click", async (event) => {
   event.preventDefault();
 
   const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
   const description1 = document.getElementById("description1").value;
   const category = document.getElementById("category").value;
   const description2 = document.getElementById("description2").value;
@@ -86,6 +89,7 @@ postPublication.addEventListener("click", async (event) => {
 
   const inpO = {
     title: title,
+    content: content,
     description1: description1,
     category: category,
     description2: description2,
@@ -109,11 +113,11 @@ postPublication.addEventListener("click", async (event) => {
       location.reload();
     } else {
       alert("Error al crear la publicación");
-      location.reload();
+      event.preventDefault();
       console.log(error);
     }
   } catch (error) {
-    console.log(error, "Cannot create connection");
-    alert("Error de conexión. Por favor, intenta más tarde.");
+    console.log(error);
+    event.preventDefault();
   }
 });
