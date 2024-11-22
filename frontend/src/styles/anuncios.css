@@ -8,7 +8,8 @@ body{
     background-color: #fff9f4
 }
 .anuncioform{
-    background-color: #fcf9f6;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px;
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
@@ -65,7 +66,7 @@ body{
 
   .session a:hover{
     color: rgb(5, 5, 5);
-    background-color: #cd9c6d;
+    background-color: #666665;
     transition: 0.5s;
   }
 
@@ -130,7 +131,7 @@ body{
     align-items: end;
   }
   .anuncioform button{
-    background-color: rgb(73, 73, 248);
+    background-color: rgb(0, 0, 0);
     color: #fff;
     border: 2px solid black;
     padding: 10px 50px; 
@@ -139,7 +140,7 @@ body{
     transition: background-color 0.3s;
   }
   .anuncioform button:hover{
-    background-color: #0056b3;
+    background-color: #4a4b4d;
   } 
   .enviar{
     display: flex;
