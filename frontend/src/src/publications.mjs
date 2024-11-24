@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <h3>${publicacion.title}</h3>
                         <h5><b>Categoría:</b> ${publicacion.category}</h5>
                         <div class="contenidoPubli">
-                          <img src="${publicacion.content.value}" alt="Imagen de la publicación">
+                          <img src="${publicacion.content}" alt="Imagen de la publicación">
                           <p><b>Problema:</b> ${publicacion.description1}</p>
                           <p><b>Posible solución:</b> ${publicacion.description2}</p>
                           <p><b>Monto estimado:</b>$${publicacion.amount}</p>
@@ -114,7 +114,6 @@ postPublication.addEventListener("click", async (event) => {
     } else {
       alert("Error al crear la publicación");
       event.preventDefault();
-      console.log(error);
     }
   } catch (error) {
     console.log(error);
