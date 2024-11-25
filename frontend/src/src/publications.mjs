@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <h3>${publicacion.title}</h3>
                         <h5><b>Categoría:</b> ${publicacion.category}</h5>
                         <div class="contenidoPubli">
-                          <img src="${publicacion.content}" alt="Imagen de la publicación">
+                          <img id="contentImage" src="${publicacion.content}" alt="Imagen de la publicación">
                           <p><b>Problema:</b> ${publicacion.description1}</p>
                           <p><b>Posible solución:</b> ${publicacion.description2}</p>
                           <p><b>Monto estimado:</b>$${publicacion.amount}</p>
@@ -75,6 +75,36 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error al obtener publicaciones:", error);
   }
 });
+const content = document.querySelector("#contentImage");
+content.addEventListener =
+  ("change",
+  async (content) => {
+    const file = content.target.files[0];
+    const uploadData = new FormData();
+    uploadData.append("file", file);
+    uploadData.append("upload_preset", "scNetworkP");
+
+    try {
+      const response = await fetch(
+        "https://cloudinary.com/v1_1/dxkcbumcu/upload",
+        {
+          method: "POST",
+          body: uploadData,
+        }
+      );
+
+      const data = await response.json();
+      console.log(data);
+
+      if (data.secure_url) {
+        content.value = data.secure_url;
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Error al subir la imagen").status(500);
+    }
+  });
+
 const postPublication = document.querySelector("#postBtn");
 
 postPublication.addEventListener("click", async (event) => {

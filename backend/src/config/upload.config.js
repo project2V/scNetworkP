@@ -1,40 +1,16 @@
-import multer from "multer";
-import path from "node:path";
-import crypto from "node:crypto";
+import cloudinary from "cloudinary";
 
-// storage
-
-const storage = multer.diskStorage({
-  destination: (_req, _file, cb) => {
-    cb(null, "src/uploads/");
-  },
-  filename: (_req, file, cb) => {
-    const fileName =
-      crypto.randomUUID().toString() + path.extname(file.originalname);
-
-    cb(null, fileName);
-  },
+cloudinary.v2.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
 });
 
-// limits
-const maxMb = 20;
-const limits = { fileSize: 1024 * 1024 * maxMb };
+export default cloudinary.v2;
 
-// filters
-const fileFilter = (_req, file, cb) => {
-  const fileTypes = /jpeg|jpg|png/;
-
-  const allowExtname = fileTypes.test(path.extname(file.originalname));
-
-  if (!allowExtname) {
-    return cb(new Error("Solo se permiten imagenes (jpg, jpeg y png"));
-  }
-
-  return cb(null, true);
+export const uploadImage = async (filesPath) => {
+  return await cloudinary.UploadStream.upload(filesPath, {
+    folder: "scNetworkP",
+    resource_type: "image",
+  });
 };
-
-export const upload = multer({
-  storage,
-  fileFilter,
-  limits,
-});

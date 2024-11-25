@@ -10,7 +10,6 @@ export const createUser = async (user) => {
     const hashedPassword = await hashString(user.password);
     user.password = hashedPassword;
     const token = await createJWT({ id: user.id });
-    const mail = sendVerificationEmail(user.email, token);
 
     const newUser = await userModel.create(user);
     return newUser;
