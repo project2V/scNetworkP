@@ -6,7 +6,7 @@ export const createJWT = (payload) => {
     jwt.sign(
       payload,
       environments.SECRET,
-      { expiresIn: "1h" },
+      { expiresIn: 3600 },
       (err, token) => {
         if (err) {
           reject("Error al firmar el token");

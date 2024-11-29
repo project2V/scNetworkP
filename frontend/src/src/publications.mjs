@@ -1,4 +1,5 @@
 import { renderButtons } from "./renderButtons.mjs";
+let archive;
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error al obtener publicaciones:", error);
   }
 });
-const content = document.querySelector("#contentImage");
+/*const content = document.querySelector("#content");
 content.addEventListener =
   ("change",
   async (content) => {
@@ -83,6 +84,7 @@ content.addEventListener =
     const uploadData = new FormData();
     uploadData.append("file", file);
     uploadData.append("upload_preset", "scNetworkP");
+    archive = uploadData;
 
     try {
       const response = await fetch(
@@ -103,7 +105,7 @@ content.addEventListener =
       console.log(error);
       alert("Error al subir la imagen").status(500);
     }
-  });
+  });*/
 
 const postPublication = document.querySelector("#postBtn");
 
@@ -111,23 +113,52 @@ postPublication.addEventListener("click", async (event) => {
   event.preventDefault();
 
   const title = document.getElementById("title").value;
-  const content = document.getElementById("content").value;
+  const contentInput = document.getElementById("content"); // Input de tipo file
   const description1 = document.getElementById("description1").value;
   const category = document.getElementById("category").value;
   const description2 = document.getElementById("description2").value;
   const amount = document.getElementById("amount").value;
 
-  const inpO = {
-    title: title,
-    content: content,
-    description1: description1,
-    category: category,
-    description2: description2,
-    amount: amount,
-  };
-  console.log(inpO);
+  const file = contentInput.files[0];
+  if (!file) {
+    alert("Por favor, selecciona una imagen para la publicación.");
+    return;
+  }
 
   try {
+    const uploadData = new FormData();
+    uploadData.append("file", file);
+    uploadData.append("upload_preset", "scNetworkP");
+
+    const uploadResponse = await fetch(
+      "https://api.cloudinary.com/v1_1/dxkcbumcu/upload",
+      {
+        method: "POST",
+        body: uploadData,
+      }
+    );
+
+    const uploadResult = await uploadResponse.json();
+
+    if (!uploadResponse.ok) {
+      console.error("Error al subir la imagen:", uploadResult);
+      alert("Error al subir la imagen. Intenta nuevamente.");
+      return;
+    }
+
+    const imageUrl = uploadResult.secure_url;
+    console.log("Imagen subida con éxito:", imageUrl);
+
+    const inpO = {
+      title: title,
+      content: imageUrl,
+      description1: description1,
+      category: category,
+      description2: description2,
+      amount: amount,
+    };
+    console.log("Datos a enviar:", inpO);
+
     const response = await fetch("http://localhost:4000/api/pub/create", {
       method: "POST",
       body: JSON.stringify(inpO),
@@ -135,18 +166,70 @@ postPublication.addEventListener("click", async (event) => {
         "Content-Type": "application/json",
       },
     });
+
     const data = await response.json();
-    console.log(response);
 
     if (response.ok) {
       alert("Publicación creada con éxito");
       location.reload();
     } else {
+      console.error("Error al crear la publicación:", data);
       alert("Error al crear la publicación");
-      event.preventDefault();
     }
   } catch (error) {
-    console.log(error);
-    event.preventDefault();
+    console.error("Error:", error);
+    alert("Hubo un error al procesar la solicitud. Intenta más tarde.");
   }
 });
+
+// postPublication.addEventListener("click", async (event) => {
+//   event.preventDefault();
+
+//   const content = document.getElementById("content");
+//   console.log(content.value);
+//   const file = content.files[0];
+//   console.log(file);
+//   const uploadData = new FormData();
+//   uploadData.append("file", file);
+
+//   const title = document.getElementById("title").value;
+//   //const content = document.getElementById("content").value;
+//   const description1 = document.getElementById("description1").value;
+//   const category = document.getElementById("category").value;
+//   const description2 = document.getElementById("description2").value;
+//   const amount = document.getElementById("amount").value;
+
+//   const inpO = {
+//     title: title,
+//     content: uploadData,
+//     description1: description1,
+//     category: category,
+//     description2: description2,
+//     amount: amount,
+//   };
+
+//   console.log(inpO);
+
+//   try {
+//     const response = await fetch("http://localhost:4000/api/pub/create", {
+//       method: "POST",
+//       body: JSON.stringify(inpO),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//     const data = await response.json();
+//     console.log(response);
+
+//     if (response.ok) {
+//       alert("Publicación creada con éxito");
+//       location.reload();
+//     } else {
+//       alert("Error al crear la publicación");
+//       event.preventDefault();
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     event.preventDefault();
+//   }
+// });

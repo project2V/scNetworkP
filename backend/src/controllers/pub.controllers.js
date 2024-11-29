@@ -2,6 +2,7 @@ import { publicationsModel } from "../models/pub.models.js";
 
 export const createPublication = async (req, res) => {
   try {
+    console.log(req.body);
     const newPublication = await publicationsModel.create(req.body);
     res.status(201).json(newPublication);
   } catch (err) {
