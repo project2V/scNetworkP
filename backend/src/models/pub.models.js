@@ -38,8 +38,4 @@ export const publicationsModel = sequelize.define("publications", {
     type: DataTypes.DATEONLY,
     allowNull: true,
   },
-  usersId: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  },
 });

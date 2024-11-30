@@ -1,9 +1,13 @@
 import { publicationsModel } from "../models/pub.models.js";
+import { userModel } from "../models/user.models.js";
 
 export const createPublication = async (req, res) => {
   try {
     console.log(req.body);
-    const newPublication = await publicationsModel.create(req.body);
+    const newPublication = await publicationsModel.create({
+      ...req.body,
+      UserId: req.params.usersId,
+    });
     res.status(201).json(newPublication);
   } catch (err) {
     console.log(err);
@@ -13,7 +17,9 @@ export const createPublication = async (req, res) => {
 
 export const getPublications = async (req, res) => {
   try {
-    const publications = await publicationsModel.findAll();
+    const publications = await publicationsModel.findAll({
+      include: [{ model: userModel }],
+    });
     res.json(publications).status(200);
   } catch (err) {
     res.status(500).json({ error: err.message });

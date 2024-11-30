@@ -58,3 +58,7 @@ export const findOneByToken = async (token) => {
 
   return user;
 };
+
+export const findOneById = async (id) => {
+  return await userModel.findOne({ where: { id: id } });
+};

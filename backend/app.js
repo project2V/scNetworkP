@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import { environments } from "./src/config/environments.js";
-import { db_start } from "./src/db/start_db.js";
+import { db_start } from "./src/db/relations.js";
 import { authRouter } from "./src/routes/auth.routes.js";
 import userRouter from "./src/routes/user.routes.js";
 import { pubRouter } from "./src/routes/pub.routes.js";
