@@ -99,6 +99,72 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       });
     });
+
+    const editPublication = document.querySelector("#editBtn");
+
+    editPublication.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const responseUser = await fetch(
+        "http://localhost:4000/api/auth/getUserInfo",
+        {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      );
+      const editPublicationC = async (event) => {
+        console.log("object");
+      };
+
+      const user = await responseUser.json();
+      document.getElementsByClassName("modal-footer")[0].innerHTML = `
+<button id="editPubBtn" type="button" class="saveChanges btn btn-primary saveChanges" onclick="editPublicationC(event)">Guardar</button>
+`;
+      const id = event.target.getAttribute("data-id");
+      document
+        .getElementsByClassName("saveChanges")[0]
+        .setAttribute("data-id", id);
+
+      const modal = document.getElementById("myModal");
+      const btn = document.getElementById("editBtn");
+      const span = document.getElementsByClassName("close")[0];
+      document.getElementById("publicationId").innerText = "Editar publicación";
+
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      const response = await fetch(
+        `http://localhost:4000/api/pub/getpublicationdata/${id}`
+      );
+
+      const data = await response.json();
+      console.log(data);
+
+      const title = document.getElementById("title");
+      const contentInput = document.getElementById("content");
+      const description1 = document.getElementById("description1");
+      const category = document.getElementById("category");
+      const description2 = document.getElementById("description2");
+      const amount = document.getElementById("amount");
+
+      title.value = data.title;
+      // contentInput.value = data.content;
+      description1.value = data.description1;
+      category.value = data.category;
+      description2.value = data.description2;
+      amount.value = data.amount;
+    });
   } catch (error) {
     console.log(error);
     console.error("Error al obtener publicaciones:", error);
@@ -196,44 +262,49 @@ postPublication.addEventListener("click", async (event) => {
   }
 });
 
-const editPublication = document.querySelector("#editBtn");
+// const editPBtn = document.getElementById("editPubBtn");
 
-editPublication.addEventListener("click", async (event) => {
-  event.preventDefault();
+// if (editPBtn) {
+//   editPBtn.addEventListener("click", async (event) => {
+//     event.preventDefault();
 
-  const responseUser = await fetch(
-    "http://localhost:4000/api/auth/getUserInfo",
-    {
-      method: "GET",
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    }
-  );
+//     const id = event.target.getAttribute("data-id");
+//     console.log(id);
 
-  const user = await responseUser.json();
-  console.log(user);
+//     const title = document.getElementById("title").value;
+//     const contentInput = document.getElementById("content").value;
+//     const description1 = document.getElementById("description1").value;
+//     const category = document.getElementById("category").value;
+//     const description2 = document.getElementById("description2").value;
+//     const amount = document.getElementById("amount").value;
 
-  const id = event.target.getAttribute("data-id");
-  console.log(id);
+//     const inpO = {
+//       title: title,
+//       content: contentInput, // Supongo que 'imageUrl' no está definido, usa 'contentInput' si es necesario.
+//       description1: description1,
+//       category: category,
+//       description2: description2,
+//       amount: amount,
+//     };
 
-  const response = await fetch(
-    `http://localhost:4000/api/pub/edit/${id}/${user.id}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+//     const response = await fetch(`http://localhost:4000/api/pub/edit/${id}`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(inpO), // Asegúrate de enviar los datos correctamente
+//     });
 
-  const data = await response.json();
+//     const data = await response.json();
 
-  if (response.ok) {
-    alert("Publicación editada con éxito");
-    location.reload();
-  } else {
-    alert("Error al editar la publicación");
-    console.log("Error:", data);
-  }
-});
+//     if (response.ok) {
+//       alert("Publicación editada con éxito");
+//       location.reload();
+//     } else {
+//       alert("Error al editar la publicación");
+//       console.log("Error:", data);
+//     }
+//   });
+// } else {
+//   console.error("Elemento editPubBtn no encontrado.");
+// }

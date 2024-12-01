@@ -24,9 +24,13 @@ function store(value) {
 document.getElementById("hamburger").addEventListener("click", function () {
   document.querySelector(".menu").classList.toggle("active");
 });
+
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];
+document.getElementsByClassName("modal-footer")[0].innerHTML = `
+<button id="postBtn" type="button" class="btn btn-primary">Crear</button>
+`;
 btn.onclick = function () {
   modal.style.display = "block";
 };

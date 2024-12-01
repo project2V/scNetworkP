@@ -14,7 +14,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   background-color: rgb(255, 255, 255);
   padding: 12px;
@@ -431,6 +431,7 @@ main {
 .botonesPubli {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 
 #contentImage {

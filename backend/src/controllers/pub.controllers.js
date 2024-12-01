@@ -60,3 +60,12 @@ export const editPublications = async (req, res) => {
     res.status(500).json({ message: "Trouble updating publication" });
   }
 };
+
+export const getPublicationData = async (req, res) => {
+  try {
+    const publication = await publicationsModel.findByPk(req.params.id);
+    res.json(publication).status(200);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
