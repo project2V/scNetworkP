@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const article = document.createElement("article");
       article.classList.add("contenedor-publi");
       article.innerHTML = `
-                        <p>Creado por:${publicacion.User.name}</p> 
+                        <p class="userNamePubli"><span>${
+                          publicacion.User.name
+                        }</span></p>
                         <h3>${publicacion.title}</h3>
                         <h5><b>Categoría:</b> ${publicacion.category}</h5>
                         <div class="contenidoPubli">
@@ -198,49 +200,6 @@ const editPublication = document.querySelector("#editBtn");
 
 editPublication.addEventListener("click", async (event) => {
   event.preventDefault();
-
-  document.innerHTML = `<div id="myModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva publicación</h1>
-      <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <form enctype="multipart/form-data">
-        <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">Título</label>
-          <input type="text" class="form-control" id="title">
-        </div>
-        <div class="mb-3">
-          <input type="file" class="form-control" id="content" name="image">
-        </div>
-        <div class="mb-3">
-          <label for="message-text" class="col-form-label">Problema</label>
-          <input type="text" class="form-control" id="description1"></input>
-        </div>
-        <div class="mb-3">
-          <label for="message-text" class="col-form-label">Categoría</label>
-          <select name="category" id="category" class="form-select">
-            <option value="Salud">Salud</option>
-            <option value="Educacion">Educacion</option>
-            <option value="Vivienda">Vivienda</option>
-            <option value="Obras">Obras</option>
-            <option value="Social">Social</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="message-text" class="col-form-label">Posible solución</label>
-          <input type="text" class="form-control" id="description2"></input>
-        </div>
-        <div class="mb-3">
-          <label for="message-text" class="col-form-label">Presupuesto estimado<label>
-          <input type="text" class="form-control" id="amount"></input>
-        </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button id="postBtn" type="button" class="btn btn-primary">Crear</button>`;
 
   const responseUser = await fetch(
     "http://localhost:4000/api/auth/getUserInfo",
