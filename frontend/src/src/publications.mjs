@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
 
     const data = await response.json();
-    console.log(data);
 
     if (response.ok) {
       localStorage.getItem("token", data.token);
@@ -54,14 +53,19 @@ document.addEventListener("DOMContentLoaded", async () => {
                           <p><b>Posible solución:</b> ${
                             publicacion.description2
                           }</p>
-                          <p><b>Monto estimado:</b>$${publicacion.amount}</p>
+                          <p><b>Monto estimado:</b> $${publicacion.amount}</p>
                         </div>
                         <div class="botonesPubli">
                           <button style="display:  ${
                             publicacion.User.id == user.id ? "block" : "none"
                           }" id="deleteBtn" class="boton-eliminar" data-id="${
         publicacion.id
-      }">Eliminar</button></div>
+      }">Eliminar</button>
+      <button style="display: ${
+        publicacion.User.id == user.id ? "block" : "none"
+      }" class="boton-editar" id="editBtn" data-id="${
+        publicacion.id
+      }">Editar</button></div>
                         `;
       publicacionesContainer.appendChild(article);
     });
@@ -187,5 +191,90 @@ postPublication.addEventListener("click", async (event) => {
   } catch (error) {
     console.error("Error:", error);
     alert("Hubo un error al procesar la solicitud. Intenta más tarde.");
+  }
+});
+
+const editPublication = document.querySelector("#editBtn");
+
+editPublication.addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  document.innerHTML = `<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva publicación</h1>
+      <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="recipient-name" class="col-form-label">Título</label>
+          <input type="text" class="form-control" id="title">
+        </div>
+        <div class="mb-3">
+          <input type="file" class="form-control" id="content" name="image">
+        </div>
+        <div class="mb-3">
+          <label for="message-text" class="col-form-label">Problema</label>
+          <input type="text" class="form-control" id="description1"></input>
+        </div>
+        <div class="mb-3">
+          <label for="message-text" class="col-form-label">Categoría</label>
+          <select name="category" id="category" class="form-select">
+            <option value="Salud">Salud</option>
+            <option value="Educacion">Educacion</option>
+            <option value="Vivienda">Vivienda</option>
+            <option value="Obras">Obras</option>
+            <option value="Social">Social</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="message-text" class="col-form-label">Posible solución</label>
+          <input type="text" class="form-control" id="description2"></input>
+        </div>
+        <div class="mb-3">
+          <label for="message-text" class="col-form-label">Presupuesto estimado<label>
+          <input type="text" class="form-control" id="amount"></input>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button id="postBtn" type="button" class="btn btn-primary">Crear</button>`;
+
+  const responseUser = await fetch(
+    "http://localhost:4000/api/auth/getUserInfo",
+    {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    }
+  );
+
+  const user = await responseUser.json();
+  console.log(user);
+
+  const id = event.target.getAttribute("data-id");
+  console.log(id);
+
+  const response = await fetch(
+    `http://localhost:4000/api/pub/edit/${id}/${user.id}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  const data = await response.json();
+
+  if (response.ok) {
+    alert("Publicación editada con éxito");
+    location.reload();
+  } else {
+    alert("Error al editar la publicación");
+    console.log("Error:", data);
   }
 });

@@ -375,3 +375,31 @@ main {
   background-color: red;
   color: white;
 }
+
+.boton-editar {
+  background-color: rgb(255, 198, 93);
+  color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.boton-editar:hover {
+  background-color: white;
+  color: rgb(255, 198, 93);
+}
+
+.darkmode .boton-editar {
+  background-color: white;
+  color: rgb(255, 198, 93);
+}
+
+.darkmode .boton-editar:hover {
+  background-color: rgb(255, 198, 93);
+  color: black;
+}
