@@ -134,27 +134,27 @@ header .darkmode {
 
 main {
   display: grid;
-  grid-template-columns: (3, 1fr);
+  grid-template-columns: 1fr; 
   grid-template-rows: auto;
-  padding: 40px;
+  padding: 20px; 
+  max-width: 1400px; 
+  margin: 0 auto; 
 }
-
 .post-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  grid-column: 1/3;
+  gap: 16px; 
+  width: 100%;
 }
 
 .contenedor-publi {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
   box-shadow: 0 2px 4px rgb(31, 31, 31);
   background-color: white;
   border-radius: 10px;
-  padding: 40px;
+  padding: 15px; 
   color: rgb(31, 31, 31);
+  max-width: 1000px; 
+  margin: 0 auto;
 }
 
 .darkmode .contenedor-publi {
@@ -181,6 +181,7 @@ main {
   align-items: center;
   border-radius: 6px;
   box-shadow: 0 1px 1px 1px darkgray;
+  width: 600px;
 }
 
 .darkmode .contenedor-publi {
@@ -192,9 +193,11 @@ main {
 }
 
 .contenidoPubli img {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
+  width: 100%; 
+  max-width: 700px; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
 }
 
 .tituloPubli {
@@ -217,15 +220,14 @@ main {
   color: white;
   cursor: pointer;
   border-radius: 10px;
-  font-size: 14px; /* Reducir tamaño del texto */
+  font-size: 14px; 
   padding: 8px 16px;
 }
 
 .dropdown-post {
   border-radius: 50%;
-  position: fixed;
   top: 750px;
-  left: 3px;
+  right: 3px;
   background-color: rgb(31, 31, 31);
   color: white;
   padding: 15px 32px;
@@ -288,9 +290,7 @@ main {
   }
 }
 
-.contenidoPubli img {
-  width: 380px;
-}
+
 
 @media (max-width: 482px) {
   .session {
@@ -331,7 +331,7 @@ main {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto; 
   padding: 20px;
 }
 .close {
