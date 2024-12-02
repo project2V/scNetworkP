@@ -28,9 +28,6 @@ document.getElementById("hamburger").addEventListener("click", function () {
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];
-document.getElementsByClassName("modal-footer")[0].innerHTML = `
-<button id="postBtn" type="button" class="btn btn-primary">Crear</button>
-`;
 btn.onclick = function () {
   modal.style.display = "block";
 };
@@ -41,4 +38,15 @@ window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+};
+
+const formatText = (event) => {
+  let input = document.getElementById("amount");
+  let valor = input.value.replace(/\./g, ""); // Eliminar puntos existentes
+  let format = "";
+  for (let i = 0; i < valor.length; i += 3) {
+    if (i > 0) format += ".";
+    format += valor.substring(i, i + 3);
+  }
+  input.value = format;
 };

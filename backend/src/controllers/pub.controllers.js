@@ -41,31 +41,3 @@ export const deletePublications = async (req, res) => {
     res.status(500).json({ message: "Trouble deleting publication" });
   }
 };
-
-export const editPublications = async (req, res) => {
-  try {
-    const publicationId = req.params.id;
-    const publication = await publicationsModel.findByPk(publicationId);
-    if (publication) {
-      await publicationsModel.update(
-        { ...req.body, UserId: req.params.usersId },
-        { where: { id: publicationId } }
-      );
-      res.status(200).json({ message: "Publication updated successfully" });
-    } else {
-      res.status(404).json({ message: "Publication not found" });
-    }
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Trouble updating publication" });
-  }
-};
-
-export const getPublicationData = async (req, res) => {
-  try {
-    const publication = await publicationsModel.findByPk(req.params.id);
-    res.json(publication).status(200);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
