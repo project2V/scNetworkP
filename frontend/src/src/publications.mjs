@@ -114,8 +114,17 @@ postPublication.addEventListener("click", async (event) => {
     }
   );
 
+  if (!responseUser.ok) {
+    alert("Error: No estás autenticado. Por favor, inicia sesión de nuevo.");
+    return;
+  }
+
   const user = await responseUser.json();
-  console.log(user);
+  
+  if (!user.id) {
+    alert("Error: No se pudo obtener tu información de usuario.");
+    return;
+  }
 
   const title = document.getElementById("title").value;
   const contentInput = document.getElementById("content"); // Input de tipo file
@@ -165,12 +174,13 @@ postPublication.addEventListener("click", async (event) => {
     console.log("Datos a enviar:", inpO);
 
     const response = await fetch(
-      `http://localhost:4000/api/pub/create/${user.id}`,
+      `http://localhost:4000/api/pub/create`,
       {
         method: "POST",
         body: JSON.stringify(inpO),
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       }
     );

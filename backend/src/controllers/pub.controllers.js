@@ -3,14 +3,12 @@ import { userModel } from "../models/user.models.js";
 
 export const createPublication = async (req, res) => {
   try {
-    console.log(req.body);
     const newPublication = await publicationsModel.create({
       ...req.body,
-      UserId: req.params.usersId,
+      UserId: req.user.id,
     });
     res.status(201).json(newPublication);
   } catch (err) {
-    console.log(err);
     res.status(500).json({ error: err.message });
   }
 };
