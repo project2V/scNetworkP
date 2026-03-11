@@ -30,15 +30,13 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(req.body);
     const user = await getUserByEmailAndPassword(email, password);
 
     if (!user) {
       return res.status(401).send({ message: "Credenciales incorrectas" });
     }
 
-    const token = await createJWT({ user: user.id });
-    console.log(token);
+    const token = await createJWT({ id: user.id });
 
     return res.status(200).json({ token: token });
   } catch (err) {
@@ -48,15 +46,15 @@ export const loginUser = async (req, res) => {
 
 export const userInfoTokenGetByFrontend = async (req, res) => {
   try {
-    const token = req.headers.authorization;
-    if (!token) {
-      return res.status(404).json({ error: "No token" });
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+      return res.status(401).json({ error: "No token" });
     }
+    const token = authHeader.split(" ")[1];
     const user = jwt.verify(token, environments.SECRET);
-    const findUser = await findOneById(user.user);
+    const findUser = await findOneById(user.id);
     res.status(200).json(findUser);
   } catch (error) {
-    console.log(error);
     res.status(500).json({ error: "Error de verificación" });
   }
 };

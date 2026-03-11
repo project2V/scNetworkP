@@ -5,6 +5,7 @@ import {
   registerUserSchema,
 } from "../models/schemas/user.schemas.js";
 import { validator } from "../middleware/validator.js";
+import { verifyJWT } from "../helpers/jwt.js";
 import {
   loginUser,
   registerUser,
@@ -13,4 +14,4 @@ import {
 
 authRouter.post("/register", registerUserSchema, validator, registerUser);
 authRouter.post("/login", loginUserSchema, validator, loginUser);
-authRouter.get("/getUserInfo", userInfoTokenGetByFrontend);
+authRouter.get("/getUserInfo", verifyJWT, userInfoTokenGetByFrontend);

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const data = await response.json();
 
     if (response.ok) {
-      localStorage.getItem("token", data.token);
+      localStorage.setItem("token", data.token);
       renderButtons();
     }
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       {
         method: "GET",
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       }
     );
@@ -109,7 +109,7 @@ postPublication.addEventListener("click", async (event) => {
     {
       method: "GET",
       headers: {
-        Authorization: localStorage.getItem("token"),
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }
   );

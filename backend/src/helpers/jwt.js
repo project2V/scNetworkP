@@ -12,17 +12,17 @@ export const createJWT = (payload) => {
           reject("Error al firmar el token");
         }
         resolve(token);
-        console.log(token);
       }
     );
   });
 };
 
 export const verifyJWT = (req, res, next) => {
-  const token = req.headers.authorization;
-  if (!token) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
     return res.status(401).json({ error: "No token" });
   }
+  const token = authHeader.split(" ")[1];
   jwt.verify(token, environments.SECRET, (err, decoded) => {
     if (err) {
       return res.status(401).json({ error: "Error de verificación" });
